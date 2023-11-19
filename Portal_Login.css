@@ -3,6 +3,156 @@
     margin: 0;
 }
 
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-form,
+.container-form-right {
+    position: absolute;
+    top: 25%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    /* Set the width */
+    border-radius: 15px;
+    /* Rounded corners */
+}
+
+.container-form {
+    left: 18%;
+    /* Adjust the left position */
+    transform: translateY(-50%);
+    transform: translateY(-10px);
+    /* Adjust translateY to elevate the container slightly */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Adjust the box shadow to complement the elevation */
+}
+
+.container-form-right {
+    right: 10%;
+    /* Adjust the right position */
+    transform: translateY(-50%);
+    transform: translateY(-10px);
+    /* Adjust translateY to elevate the container slightly */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.container-form-right h3 {
+    font-size: larger;
+    font-weight: bolder;
+    position: relative;
+    top: -43px;
+    /* Adjust this value to move the text further up */
+}
+
+.linerist {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: -72px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+}
+
+.form-group label,
+.form-group input {
+    margin-top: -10px;
+    line-height: 40px;
+    /* Adjust the line height to move text up */
+}
+
+.form-group {
+    position: relative;
+    margin-top: 20px;
+    /* Add margin to the top of form groups */
+}
+
+:root {
+    --line-color: #0A4D98;
+    /* Change line color to red */
+}
+
+.form-group:first-child::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -35px;
+    /* Adjust the top position of the text */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--line-color);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.form-group a {
+    color: #0A4D98;
+    /* Change the color as needed */
+}
+
+.login-text {
+    position: absolute;
+    top: -65px;
+    /* Adjust the top position of the login text */
+    left: 35px;
+    /* Adjust the left position of the login text */
+    padding: 0 5px;
+    /* Add some padding */
+    font-size: larger;
+    font-weight: bolder;
+}
+
+label[for="studentNumber"],
+label[for="password"] {
+    font-weight: bolder;
+}
+
+.btn-primary {
+    background-color: #0A4D98;
+    /* Change to your desired color code */
+    transition: background-color 0.3s;
+    margin-bottom: -20px;
+}
+
+.btn-primary:hover {
+    background-color: #8BBDF5;
+    /* Change to your desired hover color code */
+}
+
+.stu_portal {
+    position: absolute;
+    top: 122px;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    /* Change the text color */
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.news {
+    top: 10px;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
 svg {
     position: absolute;
     top: 0;

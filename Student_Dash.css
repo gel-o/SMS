@@ -3,6 +3,253 @@
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    /* Your mobile-specific styles here */
+    /* Consider changing widths, positions, font sizes, etc. */
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-form,
+.container-form-right {
+    position: absolute;
+    top: 25%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 30%;
+    /* Set the width */
+    border-radius: 15px;
+    /* Rounded corners */
+}
+
+.container-form {
+    left: 18%;
+    /* Adjust the left position */
+    transform: translateY(-50%);
+    transform: translateY(-10px);
+    /* Adjust translateY to elevate the container slightly */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Adjust the box shadow to complement the elevation */
+}
+
+.container-form-right {
+    right: 10%;
+    /* Adjust the right position */
+    transform: translateY(-50%);
+    transform: translateY(-10px);
+    /* Adjust translateY to elevate the container slightly */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.container-form-right h3 {
+    font-size: larger;
+    font-weight: bolder;
+    position: relative;
+    top: -43px;
+    /* Adjust this value to move the text further up */
+}
+
+.linerist {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: -72px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+}
+
+.linerist2 {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: -73px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+}
+
+.linerist3 {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: 10px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+}
+
+.linerist4 {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: 10px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+}
+
+.linerist5 {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: 10px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #0A4D98;
+    /* Change to your desired color code */
+    transition: background-color 0.3s;
+    margin-bottom: -20px;
+}
+
+.btn-primary:hover {
+    background-color: #8BBDF5;
+    /* Change to your desired hover color code */
+}
+
+.stu_portal {
+    position: absolute;
+    top: 122px;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    /* Change the text color */
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.news {
+    top: 10px;
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.menu-container {
+    position: relative;
+    top: 65%;
+    right: -345px;
+    border-radius: 20px;
+    z-index: 10;
+    /* Adjust the z-index */
+    width: 64%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Shadow added */
+    background-color: white;
+    /* Background color added */
+}
+
+/* Style the inner content as needed */
+.menu-container h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.menu-container p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.profile-container:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.profile-container {
+    position: relative;
+    width: 25%;
+    top: -33px;
+    right: 24px;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.profile-container i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -100px;
+}
+
+.profile-container h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: -86px;
+    top: 2px;
+    margin-bottom: 0px;
+}
+
+.announcements-container:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.announcements-container {
+    position: relative;
+    width: 25%;
+    top: -120px;
+    right: -450px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.announcements-container i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -105px;
+    top: 0px;
+}
+
+.announcements-container h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: 5px;
+    top: 0px;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
 svg {
     position: absolute;
     top: 0;
