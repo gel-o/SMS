@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
+    <link rel="stylesheet" href="Student_Dash.css">
+    <title>djprshs</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-form,
+        .container-form-right {
+            position: absolute;
+            top: 25%;
+            z-index: 1;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 30%;
+            /* Set the width */
+            border-radius: 15px;
+            /* Rounded corners */
+        }
+
+        .container-form {
+            left: 18%;
+            /* Adjust the left position */
+            transform: translateY(-50%);
+            transform: translateY(-10px);
+            /* Adjust translateY to elevate the container slightly */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            /* Adjust the box shadow to complement the elevation */
+        }
+
+        .container-form-right {
+            right: 10%;
+            /* Adjust the right position */
+            transform: translateY(-50%);
+            transform: translateY(-10px);
+            /* Adjust translateY to elevate the container slightly */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .container-form-right h3 {
+            font-size: larger;
+            font-weight: bolder;
+            position: relative;
+            top: -43px;
+            /* Adjust this value to move the text further up */
+        }
+
+        .linerist {
+            width: 100%;
+            height: 3px;
+            background-color: #0A4D98;
+            /* Adjust line color */
+            margin-top: -45px;
+            /* Adjust distance between text and line */
+            border-radius: 5px;
+        }
+
+        .form-group label,
+        .form-group input {
+            margin-top: -10px;
+            line-height: 40px;
+            /* Adjust the line height to move text up */
+        }
+
+        .form-group {
+            position: relative;
+            margin-top: 20px;
+            /* Add margin to the top of form groups */
+        }
+
+        :root {
+            --line-color: #0A4D98;
+            /* Change line color to red */
+        }
+
+        .form-group:first-child::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -35px;
+            /* Adjust the top position of the text */
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--line-color);
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .form-group a {
+            color: #0A4D98;
+            /* Change the color as needed */
+        }
+
+        .login-text {
+            position: absolute;
+            top: -65px;
+            /* Adjust the top position of the login text */
+            left: 35px;
+            /* Adjust the left position of the login text */
+            padding: 0 5px;
+            /* Add some padding */
+            font-size: larger;
+            font-weight: bolder;
+        }
+
+        label[for="studentNumber"],
+        label[for="password"] {
+            font-weight: bolder;
+        }
+
+        .btn-primary {
+            background-color: #0A4D98;
+            /* Change to your desired color code */
+            transition: background-color 0.3s;
+            margin-bottom: -20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #8BBDF5;
+            /* Change to your desired hover color code */
+        }
+
+        .stu_portal {
+            position: absolute;
+            top: 122px;
+            left: 28%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: black;
+            /* Change the text color */
+            z-index: 10;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--STUDENT PORTAL TEXT-->
+    <div class="stu_portal">
+        <i class="fa-solid fa-school" style="font-size: 40px; position: relative; top: 33px; right: 153px;"></i>
+        <h2 style="font-weight: bold;">Student Portal</h2>
+    </div>
+
+    <!--LOG IN CONTAINER-->
+    <div class="container-form">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <!-- Form -->
+                    <form>
+                        <div class="form-group">
+                            <i class="fa-solid fa-arrow-right-to-bracket"
+                                style="top: -65px; position: relative; font-size: 25px; left: 5px;"></i>
+                            <div class="login-text">Log In</div>
+                            <div class="line"></div>
+                            <label for="studentNumber" style="top: -30px; position: relative;">Student Number</label>
+                            <input type="text" class="form-control" id="studentNumber"
+                                placeholder="Enter student number" style="top: -30px; position: relative;"
+                                pattern="[0-9]+" title="Please enter numbers only" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" style="top: -30px; position: relative;">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                style="top: -31px; position: relative;">
+                            <small><a href="#" id="forgotPasswordLink" data-toggle="modal"
+                                    data-target="#forgotPasswordModal" style="top: -30px; position: relative;">Forgot password?</a></small>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="top: -35px; position: relative;">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--NEWS AND UPDATES CONTAINER-->
+    <div class="container-form-right" style="right: 18%;">
+        <!-- Second container on the right side -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <h3 style="font-size: larger;">News and Updates</h3>
+                    <div class="linerist"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FORGOT PASSWORD MODAL-->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+        aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your form or content for password recovery here -->
+                    <p>Please enter your email to recover your password:</p>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" style="top: -12px; position: relative;">Recover Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SCHOOL LOGO-->
+    <img src="img/school_logo.png" alt="Logo"
+        style="position: absolute; top: 20px; left: 20px; width: 100px; height: auto; z-index: 2;">
+
+    <!--ANIMATED SVG BACKGROUND-->
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+        <defs>
+            <linearGradient id="bg">
+                <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
+                <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
+                <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
+            </linearGradient>
+            <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+      s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+        <g>
+            <use xlink:href='#wave' opacity=".3">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="10s"
+                    calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+            </use>
+            <use xlink:href='#wave' opacity=".6">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="8s"
+                    calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+            </use>
+            <use xlink:href='#wave' opacity=".9">
+                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="6s"
+                    calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+            </use>
+        </g>
+    </svg>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--LINE SA ILALIM NG STUDENT PORTAL-->
+    <style>
+        body::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 160px;
+            left: 18%;
+            right: 18%;
+            height: 5px;
+            background-color: #0A4D98;
+            /* Adjust the color as needed */
+            z-index: 3;
+            /* Ensure it's above other elements */
+            border-radius: 5px;
+        }
+    </style>
+
+</body>
+
+</html>
