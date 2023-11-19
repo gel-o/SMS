@@ -244,13 +244,12 @@
                 <div class="modal-body">
                     <!-- Add your form or content for password recovery here -->
                     <p>Please enter your email to recover your password:</p>
-                    <input type="email" class="form-control" id="recoveryEmail" placeholder="Enter your email">
-                    <div id="emailWarning" style="color: red; display: none;">Please enter your email!</div>
+                    <input type="email" class="form-control" placeholder="Enter your email">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="recoverPassword()"
-                        style="top: -12px; position: relative;">Recover Password</button>
+                    <button type="button" class="btn btn-primary" style="top: -12px; position: relative;">Recover
+                        Password</button>
                 </div>
             </div>
         </div>
@@ -294,23 +293,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!--FORGOT PASSWORD VALIDATION SCRIPT-->
-    <script>
-        function recoverPassword() {
-            const email = document.getElementById('recoveryEmail').value;
-            const warning = document.getElementById('emailWarning');
-
-            if (!email) {
-                warning.style.display = 'block';
-            } else {
-                // Here you can add your logic to handle password recovery with the provided email
-                // For example, sending a recovery email or initiating a recovery process
-                // Once the process is done, you can close the modal
-                $('#forgotPasswordModal').modal('hide');
-            }
-        }
-    </script>
 
     <!--LINE SA ILALIM NG STUDENT PORTAL-->
     <style>
