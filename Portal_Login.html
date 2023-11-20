@@ -131,7 +131,7 @@
 
     <!--FORGOT PASSWORD MODAL-->
     <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
-        aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        aria-labelledby="forgotPasswordModalLabel" aria-hidden="true" onload="showPasswordRequirements()">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -142,14 +142,33 @@
                 </div>
                 <div class="modal-body">
                     <!-- Add your form or content for password recovery here -->
-                    <p>Please enter your email to recover your password:</p>
-                    <input type="email" class="form-control" id="recoveryEmail" placeholder="Enter your email">
-                    <div id="emailWarning" style="color: red; display: none;">Please enter your email!</div>
+                    <div class="form-group">
+                        <label for="studentNumberRecovery">Student Number</label>
+                        <input type="text" class="form-control" id="studentNumberRecovery"
+                            placeholder="Enter your student number">
+                        <div id="studentNumberWarning" style="color: red; display: none;">Enter a valid student number!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                        <small id="passwordRequirements" style="color: #6c757d;">Password should be 8 or above
+                            characters, contain at least one uppercase letter, one lowercase letter, one number, and
+                            special characters (!@#$%^&*-_?)</small>
+                        <div id="passwordValidationWarning" style="color: red; display: none;">Enter a valid password!
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword"
+                            placeholder="Confirm new password">
+                        <div id="passwordMismatchWarning" style="color: red; display: none;">The passwords do not match!
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="recoverPassword()"
-                        style="top: -12px; position: relative;">Recover Password</button>
+                    <button type="button" class="btn btn-primary" onclick="resetPassword()" style="position: relative; top: -12px;">Reset Password</button>
                 </div>
             </div>
         </div>
@@ -194,20 +213,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
     <!--FORGOT PASSWORD VALIDATION SCRIPT-->
     <script>
-        function recoverPassword() {
-            const email = document.getElementById('recoveryEmail').value;
-            const warning = document.getElementById('emailWarning');
+        function resetPassword() {
+            const studentNumber = document.getElementById('studentNumberRecovery').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const studentNumberWarning = document.getElementById('studentNumberWarning');
+            const passwordMismatchWarning = document.getElementById('passwordMismatchWarning');
+            const passwordValidationWarning = document.getElementById('passwordValidationWarning');
 
-            if (!email) {
-                warning.style.display = 'block';
-            } else {
-                // Here you can add your logic to handle password recovery with the provided email
-                // For example, sending a recovery email or initiating a recovery process
-                // Once the process is done, you can close the modal
-                $('#forgotPasswordModal').modal('hide');
+            // Reset all previous warnings
+            studentNumberWarning.style.display = 'none';
+            passwordValidationWarning.style.display = 'none';
+            passwordMismatchWarning.style.display = 'none';
+
+            const isValidStudentNumber = /^\d{9}$/.test(studentNumber);
+            const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*-_?]).{8,}$/.test(newPassword);
+
+            if (!isValidStudentNumber || !isValidPassword || newPassword !== confirmPassword) {
+                if (!isValidStudentNumber) {
+                    studentNumberWarning.style.display = 'block';
+                }
+                if (!isValidPassword) {
+                    passwordValidationWarning.style.display = 'block';
+                }
+                if (newPassword !== confirmPassword) {
+                    passwordMismatchWarning.style.display = 'block';
+                }
+                return; // Stop the function if any field doesn't meet the requirements
             }
+
+            // Perform password reset logic here
+
+            // Close the modal if validations pass
+            $('#forgotPasswordModal').modal('hide');
+        }
+
+        function showPasswordRequirements() {
+            const passwordRequirements = document.getElementById('passwordRequirements');
+            passwordRequirements.style.display = 'block';
         }
     </script>
 
