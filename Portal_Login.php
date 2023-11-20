@@ -1,3 +1,28 @@
+<?php
+include_once("connections/connection.php");
+$con = connection();
+session_start();
+
+// login form processing
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // query the database to check if the user exists
+    $sql = "SELECT * FROM login WHERE email='$email' AND password='$password'";
+    $result = $con->query($sql);
+
+    // if user exists, create a session and redirect to dashboard
+    if ($row['email'] === $email && $row['password'] === $password) {
+        $_SESSION['email'] = $email;
+        header("Location: Student_Dash.html");
+    } else {
+        echo "Invalid username or password";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,16 +100,16 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <!-- Form -->
-                    <form>
+                    <form method="post">
                         <div class="form-group">
                             <i class="fa-solid fa-arrow-right-to-bracket"
                                 style="top: -65px; position: relative; font-size: 25px; left: 5px;"></i>
                             <div class="login-text">Log In</div>
                             <div class="line"></div>
-                            <label for="studentNumber" style="top: -30px; position: relative;">Student Number</label>
-                            <input type="text" class="form-control" id="studentNumber"
+                            <label for="email" style="top: -30px; position: relative;">Student Number</label>
+                            <input type="text" class="form-control" id="email"
                                 placeholder="Enter student number" style="top: -30px; position: relative;"
-                                pattern="[0-9]+" title="Please enter numbers only" required>
+                                title="Please enter numbers only" required>
                         </div>
                         <div class="form-group">
                             <label for="password" style="top: -30px; position: relative;">Password</label>
@@ -94,7 +119,7 @@
                                     data-target="#forgotPasswordModal" style="top: -30px; position: relative;">Forgot
                                     password?</a></small>
                         </div>
-                        <button type="submit" class="btn btn-primary"
+                        <button type="submit" name="submit" class="btn btn-primary"
                             style="top: -35px; position: relative;">Login</button>
                     </form>
                 </div>
@@ -151,10 +176,10 @@
                 <div class="modal-body">
                     <!-- Add your form or content for password recovery here -->
                     <div class="form-group">
-                        <label for="studentNumberRecovery">Student Number</label>
-                        <input type="text" class="form-control" id="studentNumberRecovery"
+                        <label for="emailRecovery">Student Number</label>
+                        <input type="text" class="form-control" id="emailRecovery"
                             placeholder="Enter your student number">
-                        <div id="studentNumberWarning" style="color: red; display: none;">Enter a valid student number!
+                        <div id="emailWarning" style="color: red; display: none;">Enter a valid student number!
                         </div>
                     </div>
                     <div class="form-group">
@@ -226,24 +251,24 @@
     <!--FORGOT PASSWORD VALIDATION SCRIPT-->
     <script>
         function resetPassword() {
-            const studentNumber = document.getElementById('studentNumberRecovery').value;
+            const email = document.getElementById('emailRecovery').value;
             const newPassword = document.getElementById('newPassword').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
-            const studentNumberWarning = document.getElementById('studentNumberWarning');
+            const emailWarning = document.getElementById('emailWarning');
             const passwordMismatchWarning = document.getElementById('passwordMismatchWarning');
             const passwordValidationWarning = document.getElementById('passwordValidationWarning');
 
             // Reset all previous warnings
-            studentNumberWarning.style.display = 'none';
+            emailWarning.style.display = 'none';
             passwordValidationWarning.style.display = 'none';
             passwordMismatchWarning.style.display = 'none';
 
-            const isValidStudentNumber = /^\d{9}$/.test(studentNumber);
+            const isValidemail = /^\d{9}$/.test(email);
             const isValidPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*-_?]).{8,}$/.test(newPassword);
 
-            if (!isValidStudentNumber || !isValidPassword || newPassword !== confirmPassword) {
-                if (!isValidStudentNumber) {
-                    studentNumberWarning.style.display = 'block';
+            if (!isValidemail || !isValidPassword || newPassword !== confirmPassword) {
+                if (!isValidemail) {
+                    emailWarning.style.display = 'block';
                 }
                 if (!isValidPassword) {
                     passwordValidationWarning.style.display = 'block';
