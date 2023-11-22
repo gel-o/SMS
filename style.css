@@ -1,0 +1,272 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 0%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.topbar {
+    position:fixed;
+    width: 100%;
+    height: 33px;
+    background: #8BBDF5;
+    z-index: 1;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 1px 25px;
+    font-size: 16px;
+    margin-top: 2px;
+    border-radius: 10px;
+    transition: 0.3s;
+    left: 10px;
+    cursor: pointer;
+
+}
+
+nav ul li a:hover {
+    color: green;
+}
+
+nav h4 a {
+    font-size: 16px;
+    padding: 1px 25px;
+    margin-top: -14px;
+    border-radius: 10px;
+    display: inline-block;
+    color: black;
+    font-weight: 400;
+    left: 1150px;
+    position: absolute;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+
+
+}
+
+nav h4 a:hover {
+    color: green;
+}
+
+.header {
+    position: fixed;
+    padding: 0 0%;
+    top: 33px;
+    display:flex;
+    width: 100%;
+    height: 100px;
+    background: white;
+    z-index: 1;
+
+}
+
+.header h1 {
+    position: absolute;
+    top: 10px;
+    left: 130px;
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.header img {
+    width: 75px;
+    height: 75px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 15px;
+    left: 50px;
+}
+
+.header h2 {
+    color: #000;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 11px; /* 84.615% */
+    position:absolute;
+    left: 131px;
+    top: 65px;
+}
+
+.header nav {
+    display: flex;
+    position: absolute;
+    left: 630px;
+    top: 30px;
+}
+
+.header nav a {
+    padding: 10px 50px;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+    cursor: pointer;
+
+
+}
+.header nav a:hover {
+    color: green;
+}
+
+.front {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    padding: 0 0%;
+    top:100px;
+}
+
+.front img {
+    width: 100%;
+    height: 601px;
+    flex-shrink: 0;
+}
+
+.callout {
+    width:100%;
+    height: 260px;
+    display: flex;
+    top: 700px;
+    position: absolute;
+}
+
+.callout .admission {
+    width: 395px;
+    height: 176px;
+    flex-shrink: 0;
+    background-color: #ededed;
+    position: absolute;
+    left: 150px;
+    top: 40px;
+    border-radius: 17px;
+
+}
+
+.callout .admission h1 {
+    color: #000;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    left: 14px;
+}
+
+.callout .admission p {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+}
+
+.callout .admission a {
+    display: inline-block;
+    padding: 7px 60px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    background: #8BBDF5;
+    color: black;
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    cursor: pointer;
+
+}
+
+.callout .admission a:hover {
+    background: #a0ffd3 ;
+    transition: 0.5s;
+}
+
+.callout .academic {
+    width: 395px;
+    height: 176px;
+    flex-shrink: 0;
+    background-color: #ededed;
+    position: absolute;
+    left: 800px;
+    top: 40px;
+    border-radius: 17px;
+
+}
+
+.callout .academic h1 {
+    color: #000;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 650;
+    line-height: normal;
+    position: absolute;
+    top: 15px;
+    left: 14px;
+}
+
+.callout .academic p {
+    color: #000;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+}
+
+.callout .academic a {
+    display: inline-block;
+    padding: 7px 60px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    background: #8BBDF5;
+    color: black;
+    position: absolute;
+    top: 120px;
+    left: 15px;
+    cursor: pointer;
+
+}
+
+.callout .academic a:hover {
+    background: #a0ffd3 ;
+    transition: 0.5s;
+}
