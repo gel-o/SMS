@@ -270,3 +270,34 @@ nav h4 a:hover {
     background: #a0ffd3 ;
     transition: 0.5s;
 }
+
+.info {
+        width:100%;
+        height: 300px;
+        display: flex;
+        top: 960px;
+        position: absolute;
+        background-color: aqua;
+}
+
+.info h1 {
+    color: #000;
+    text-align: center;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    left: 125px;
+}
+
+.info p {
+    color: #000;
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 70px;
+}
