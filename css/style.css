@@ -61,8 +61,8 @@ nav h4 a {
     display: inline-block;
     color: black;
     font-weight: 400;
-    left: 1150px;
-    position: absolute;
+    right: 100px;
+    position: fixed;
     text-decoration: none;
     transition: 0.3s;
     cursor: pointer;
@@ -119,20 +119,19 @@ nav h4 a:hover {
 
 .header nav {
     display: flex;
-    position: absolute;
-    left: 630px;
-    top: 30px;
+    position: fixed;
+    left: 900px;
+    top: 60px;
 }
 
 .header nav a {
-    padding: 10px 50px;
+    padding: 10px 80px;
     color: black;
     display: inline-block;
     text-decoration: none;
     font-size: 17px;
     transition: 0.3s;
     cursor: pointer;
-
 
 }
 .header nav a:hover {
@@ -149,7 +148,7 @@ nav h4 a:hover {
 
 .front img {
     width: 100%;
-    height: 601px;
+    height: 100%;
     flex-shrink: 0;
 }
 
@@ -157,7 +156,7 @@ nav h4 a:hover {
     width:100%;
     height: 260px;
     display: flex;
-    top: 700px;
+    top: 1050px;
     position: absolute;
 }
 
@@ -167,7 +166,7 @@ nav h4 a:hover {
     flex-shrink: 0;
     background-color: #ededed;
     position: absolute;
-    left: 150px;
+    left: 200px;
     top: 40px;
     border-radius: 17px;
 
@@ -222,7 +221,7 @@ nav h4 a:hover {
     flex-shrink: 0;
     background-color: #ededed;
     position: absolute;
-    left: 800px;
+    right: 200px;
     top: 40px;
     border-radius: 17px;
 
@@ -275,8 +274,10 @@ nav h4 a:hover {
     width:100%;
     height: 300px;
     display: flex;
-    top: 960px;
+    top: 1170px;
     position: absolute;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
     }
 
 .info h1 {
@@ -286,7 +287,6 @@ nav h4 a:hover {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    position: absolute;
     left: 125px;
 }
 
@@ -298,14 +298,14 @@ nav h4 a:hover {
     font-weight: 400;
     line-height: normal;
     position: absolute;
-    top: 70px;
+    top: 200px;
 }
 
 .numbers {
     width:100%;
     height: 300px;
     display: flex;
-    top: 1270px;
+    top: 1570px;
     position: absolute;
 }
 
@@ -322,7 +322,7 @@ nav h4 a:hover {
     height: 96.694px;
     flex-shrink: 0;
     position: absolute;
-    left: 620px;
+    left: 920px;
 }
 
 .staff {
@@ -330,7 +330,7 @@ nav h4 a:hover {
     height: 96.694px;
     flex-shrink: 0;
     position: absolute;
-    left: 1050px;
+    right:200px
 }
 
 .text1 {
@@ -352,7 +352,7 @@ nav h4 a:hover {
     line-height: normal;
     position: absolute;
     top: 160px;
-    left: 585px;
+    left: 885px;
 }
 
 .text3 {
@@ -363,5 +363,26 @@ nav h4 a:hover {
     line-height: normal;
     position: absolute;
     top: 160px;
-    left: 1010px;
+    right: 170px;
 }
+
+.container {
+    width: 100%; /* Use percentage for a responsive width */
+    margin: 0 auto; /* Center the container */
+    background-color: #f0f0f0;
+    padding: 0px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Responsive styles using media queries */
+  @media (max-width: 1900px) {
+    .container {
+      width: 100%; /* Adjust width for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 100%; /* Further adjust width for even smaller screens */
+    }
+  }
