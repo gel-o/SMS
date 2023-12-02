@@ -141,7 +141,6 @@ nav h4 a:hover {
 .front {
     width: 100%;
     position: absolute;
-    display: flex;
     padding: 0 0%;
     top:100px;
 }
@@ -364,6 +363,38 @@ nav h4 a:hover {
     position: absolute;
     top: 160px;
     right: 170px;
+}
+
+.num1 {
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: 95px;
+    left: 235px;
+}
+
+
+.num2 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: 95px;
+    left: 925px;
+}
+
+.num3 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: 95px;
+    right: 220px;
 }
 
 .container {
