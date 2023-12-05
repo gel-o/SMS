@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
                                 style="top: -65px; position: relative; font-size: 25px; left: 5px;"></i>
                             <div class="login-text">Log In</div>
                             <div class="line"></div>
-                            <label for="email" style="top: -30px; position: relative;">Student Number</label>
+                            <label for="email" style="top: -30px; position: relative;">Email</label>
                             <input type="text" class="form-control" id="email"
                                 placeholder="Enter student number" style="top: -30px; position: relative;"
                                 title="Please enter numbers only" required>
