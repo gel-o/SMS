@@ -17,6 +17,7 @@
     <div class="stu_portal">
         <i class="fa-solid fa-school" style="font-size: 40px; position: relative; top: 33px; right: 150px;"></i>
         <h2 style="font-weight: bold; position: relative; right: 20px;">Welcome, </h2>
+        <div class="linerist6"></div>
         <h4 style="font-size: small; position: relative; right: 60px; top: 3px;">Last Login: November 22, 2023 10:35:20
             am</h4>
 
@@ -109,10 +110,59 @@
                         <i class="fa-solid fa-bell"></i>
                         <h4>Class Announcements</h4>
                     </div>
+                    <!-- ENROLLED SUBJECTS -->
+                    <div class="enrolledsub-container">
+                        <i class="fa-solid fa-book"></i>
+                        <h4>Enrolled Subjects</h4>
+                    </div>
+                    <!-- GRADES-->
+                    <div class="grades-container">
+                        <i class="fa-solid fa-chart-column"></i>
+                        <h4>Grades</h4>
+                    </div>
+                    <!-- CURRICULUM-->
+                    <div class="checklist-container">
+                        <i class="fa-solid fa-list-check"></i>
+                        <h4>Curriculum Checklist</h4>
+                    </div>
+                    <!-- PREFERENCES -->
+                    <div class="pref-container" id="prefContainer">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <h4>Preferences</h4>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- PREFERENCES MODAL -->
+    <div class="modal" id="darkModeModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Dark Mode Settings</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p>Choose your preferred mode:</p>
+                    <label for="darkModeToggle">Dark Mode:</label>
+                    <input type="checkbox" id="darkModeToggle">
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveChangesBtn" data-dismiss="modal"
+                        style="position: relative; top: -12px;">Save Changes</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!--SCHOOL LOGO-->
     <img src="img/school_logo.png" alt="Logo"
         style="position: absolute; top: 20px; left: 20px; width: 100px; height: auto; z-index: 2;">
@@ -149,26 +199,144 @@
         </g>
     </svg>
 
+    <!-- DARK MODE JS -->
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!--LINE SA ILALIM NG STUDENT PORTAL-->
-    <style>
-        body::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 148px;
-            left: 18%;
-            right: 18%;
-            height: 5px;
-            background-color: #0A4D98;
-            /* Adjust the color as needed */
-            z-index: 3;
-            /* Ensure it's above other elements */
-            border-radius: 5px;
-        }
-    </style>
+    <script>
+        $(document).ready(function () {
+            let isDarkModeToggled = false;
+
+            // Event listener for the Preferences button
+            $('#prefContainer').click(function () {
+                $('#darkModeModal').modal('show'); // Show the modal on button click
+            });
+
+            // Dark mode toggle functionality
+            $('#darkModeToggle').change(function () {
+                isDarkModeToggled = true; // Update the flag when dark mode is toggled
+            });
+
+            // Save Changes button click
+            $('#saveChangesBtn').click(function () {
+                if (isDarkModeToggled) {
+                    // Apply changes only if dark mode is toggled
+                    if ($('#darkModeToggle').is(':checked')) {
+                        $('body').addClass('dark-mode');
+                        $('rect').fadeOut(function () {
+                            $(this).css('fill', '#1d1717').fadeIn(); // Fade in the color change
+                        });
+                        $('.container-form, .container-form-right, .menu-container').fadeOut(function () {
+                            $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                        });
+                        $('.stu_portal h2, .stu_portal h4').fadeOut(function () {
+                            $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                        });
+                        $('.fa-solid.fa-school').fadeOut(function () {
+                            $(this).css('color', 'white').fadeIn(); // Fade in icon color change
+                        });
+                        $('#darkModeModal .modal-content').fadeOut(function () {
+                            $(this).css('background-color', '#5d5555').fadeIn(); // Fade in modal background color change
+                        });
+                        $('.profile-container').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in profile container color change
+                        });
+                        $('.announcements-container').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in announcements container color change
+                        });
+                        $('.enrolledsub-container').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in enrolledsubs container color change
+                        });
+                        $('.grades-container').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.checklist-container').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.pref-container').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist2').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist3').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist4').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist5').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist6').fadeOut(function () {
+                            $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                        });
+                    } else {
+                        $('body').removeClass('dark-mode');
+                        $('rect').fadeOut(function () {
+                            $(this).css('fill', 'white').fadeIn(); // Fade in the color change
+                        });
+                        $('.container-form, .container-form-right, .menu-container').fadeOut(function () {
+                            $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
+                        });
+                        $('.stu_portal h2, .stu_portal h4').fadeOut(function () {
+                            $(this).css('color', 'black').fadeIn(); // Fade in text color change
+                        });
+                        $('.fa-solid.fa-school').fadeOut(function () {
+                            $(this).css('color', 'black').fadeIn(); // Fade in icon color change
+                        });
+                        $('#darkModeModal .modal-content').fadeOut(function () {
+                            $(this).css('background-color', 'white').fadeIn(); // Fade in modal background color change
+                        });
+                        $('.profile-container').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in profile container color change
+                        });
+                        $('.announcements-container').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in announcements container color change
+                        });
+                        $('.enrolledsub-container').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in enrolledsubs container color change
+                        });
+                        $('.grades-container').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.checklist-container').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in checklist container color change
+                        });
+                        $('.pref-container').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in pref container color change
+                        });
+                        $('.linerist').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist2').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist3').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist4').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist5').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                        $('.linerist6').fadeOut(function () {
+                            $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                        });
+                    }
+                    // Reset the flag after changes are applied
+                    isDarkModeToggled = false;
+                }
+            });
+        });
+
+    </script>
 
 </body>
 

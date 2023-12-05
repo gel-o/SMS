@@ -13,12 +13,13 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .container-form,
 .container-form-right {
     position: absolute;
-    top: 25%;
+    top: 22%;
     z-index: 1;
     background-color: white;
     padding: 20px;
@@ -106,6 +107,19 @@ html {
     border-radius: 5px;
 }
 
+.linerist6 {
+    position: relative;
+    top: -3px;
+    left: -60px;
+    width: 475%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: 10px;
+    /* Adjust distance between text and line */
+    border-radius: 1px;
+}
+
 .btn-primary {
     background-color: #0A4D98;
     /* Change to your desired color code */
@@ -146,7 +160,8 @@ svg {
 
 .menu-container {
     position: relative;
-    top: 65%;
+    top: 61%;
+    height: 320px;
     right: -345px;
     border-radius: 20px;
     z-index: 10;
@@ -157,6 +172,8 @@ svg {
     /* Shadow added */
     background-color: white;
     /* Background color added */
+    margin-bottom: -50px;
+    overflow: hidden;
 }
 
 /* Style the inner content as needed */
@@ -219,7 +236,7 @@ svg {
     position: relative;
     width: 25%;
     top: -120px;
-    right: -450px;
+    right: -424px;
     padding: 20px;
     border-radius: 20px;
     background-color: #0A4D98;
@@ -248,6 +265,171 @@ svg {
     top: 0px;
     margin-bottom: -1px;
     text-align: center;
+}
+
+.enrolledsub-container:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.enrolledsub-container {
+    position: relative;
+    width: 25%;
+    top: -205px;
+    right: -858px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.enrolledsub-container i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -105px;
+    top: 0px;
+}
+
+.enrolledsub-container h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: 5px;
+    top: 0px;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
+.grades-container:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.grades-container {
+    position: relative;
+    width: 25%;
+    top: -130px;
+    right: 24px;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.grades-container i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -100px;
+}
+
+.grades-container h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: -86px;
+    top: 2px;
+    margin-bottom: 0px;
+}
+
+.checklist-container:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.checklist-container {
+    position: relative;
+    width: 25%;
+    top: -215px;
+    right: -427px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.checklist-container i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -105px;
+    top: 0px;
+}
+
+.checklist-container h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: 5px;
+    top: 0px;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
+.pref-container:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.pref-container {
+    position: relative;
+    width: 25%;
+    top: -299px;
+    right: -858px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.pref-container i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -105px;
+    top: 0px;
+}
+
+.pref-container h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: 5px;
+    top: 0px;
+    margin-bottom: -1px;
+    text-align: center;
+}
+
+.dark-mode {
+    /* Update styles for dark mode here */
+    background-color: #333;
+    color: #fff;
 }
 
 svg {
