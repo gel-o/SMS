@@ -13,6 +13,13 @@
 
 <body>
 
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
     <!--WELCOME (STUDENT NAME) TEXT-->
     <div class="stu_portal">
         <i class="fa-solid fa-school" style="font-size: 25px; position: relative; top: -1em; right: 5em;"></i>
@@ -35,8 +42,7 @@
                     <div class="linerist2"></div>
                     <h4 style="font-size: small;">Current Academic Year</h4>
 
-                    <i class="fa-solid fa-list"
-                        style="position: relative; font-size: 25px; top: 0em; right: -5px;"></i>
+                    <i class="fa-solid fa-list" style="position: relative; font-size: 25px; top: 0em; right: -5px;"></i>
                     <h3 style="font-size: larger; position: relative; left: 38px; top: -12%; font-weight: bold;">3rd
                         Quarter</h3>
                     <div class="linerist3"></div>
@@ -44,14 +50,16 @@
 
                     <i class="fa-regular fa-circle-check"
                         style="position: relative; font-size: 25px; top: 0em; right: -5px;"></i>
-                    <h3 style="font-size: larger; position: relative; left: 38px; top: -12%; font-weight: bold;">Enrolled
+                    <h3 style="font-size: larger; position: relative; left: 38px; top: -12%; font-weight: bold;">
+                        Enrolled
                     </h3>
                     <div class="linerist4"></div>
                     <h4 style="font-size: small;">Status</h4>
 
                     <i class="fa-solid fa-graduation-cap"
                         style="position: relative; font-size: 25px; top: 0em; right: -5px;"></i>
-                    <h3 style="font-size: larger; position: relative; left: 38px; top: -12%; font-weight: bold;">Gr. 12 -
+                    <h3 style="font-size: larger; position: relative; left: 38px; top: -12%; font-weight: bold;">Gr. 12
+                        -
                         ICT/CSS</h3>
                     <div class="linerist5"></div>
                     <h4 style="font-size: small;">Strand and Year Level</h4>
@@ -73,11 +81,13 @@
                     <!-- Placeholder News -->
                     <div class="news">
                         <div class="news-item">
-                            <h5 style="position: relative; font-size: 98%; font-weight: bold;">Important Announcement</h5>
+                            <h5 style="position: relative; font-size: 98%; font-weight: bold;">Important Announcement
+                            </h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                         <div class="news-item">
-                            <h5 style="position: relative; font-size: 98%; font-weight: bold;">3rd Quarterly Exam Schedule</h5>
+                            <h5 style="position: relative; font-size: 98%; font-weight: bold;">3rd Quarterly Exam
+                                Schedule</h5>
                             <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
@@ -160,37 +170,7 @@
     <img src="img/school_logo.png" alt="Logo"
         style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
 
-    <!--ANIMATED SVG BACKGROUND-->
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
-        <defs>
-            <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
-                <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
-            </linearGradient>
-            <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-      s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
-        </defs>
-        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
-        <g>
-            <use xlink:href='#wave' opacity=".3">
-                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="10s"
-                    calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1"
-                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-            </use>
-            <use xlink:href='#wave' opacity=".6">
-                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="8s"
-                    calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"
-                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-            </use>
-            <use xlink:href='#wave' opacity=".9">
-                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="6s"
-                    calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1"
-                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-            </use>
-        </g>
-    </svg>
+    
 
     <!-- DARK MODE JS -->
 
