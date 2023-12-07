@@ -19,12 +19,13 @@ html {
 .container-form,
 .container-form-right {
     position: absolute;
-    top: 22%;
+    top: 19%;
     z-index: 1;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     width: 30%;
+    height: 16em;
     /* Set the width */
     border-radius: 15px;
     /* Rounded corners */
@@ -82,7 +83,7 @@ html {
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
-    margin-top: 10px;
+    margin-top: -7%;
     /* Adjust distance between text and line */
     border-radius: 5px;
 }
@@ -92,7 +93,7 @@ html {
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
-    margin-top: 10px;
+    margin-top: -7%;
     /* Adjust distance between text and line */
     border-radius: 5px;
 }
@@ -102,16 +103,16 @@ html {
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
-    margin-top: 10px;
+    margin-top: -7%;
     /* Adjust distance between text and line */
     border-radius: 5px;
 }
 
 .linerist6 {
     position: relative;
-    top: -3px;
-    left: -60px;
-    width: 475%;
+    top: -2em;
+    left: -30px;
+    width: 383%;
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
@@ -160,9 +161,9 @@ svg {
 
 .menu-container {
     position: relative;
-    top: 61%;
-    height: 320px;
-    right: -345px;
+    top: 55%;
+    left: 18%;
+    height: 250px;
     border-radius: 20px;
     z-index: 10;
     /* Adjust the z-index */
@@ -194,17 +195,16 @@ svg {
 }
 
 .profile-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -33px;
-    right: 24px;
+    top: -2em;
+    right: 74%;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
-    padding: 10px;
     color: white;
     cursor: pointer;
-    padding: 20px;
+    padding: 10px;
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
@@ -214,7 +214,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -100px;
+    right: -43%;
 }
 
 .profile-container h4 {
@@ -222,7 +222,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: -86px;
+    right: -37%;
     top: 2px;
     margin-bottom: 0px;
 }
@@ -233,11 +233,11 @@ svg {
 }
 
 .announcements-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -120px;
-    right: -424px;
-    padding: 20px;
+    top: -2em;
+    right: 38%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -252,7 +252,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -105px;
+    right: -45%;
     top: 0px;
 }
 
@@ -261,7 +261,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: 5px;
+    right: -1%;
     top: 0px;
     margin-bottom: -1px;
     text-align: center;
@@ -273,11 +273,11 @@ svg {
 }
 
 .enrolledsub-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -205px;
-    right: -858px;
-    padding: 20px;
+    top: -2em;
+    right: 1%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -313,17 +313,16 @@ svg {
 }
 
 .grades-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -130px;
-    right: 24px;
+    top: 5em;
+    right: 74%;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
     padding: 10px;
     color: white;
     cursor: pointer;
-    padding: 20px;
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
@@ -333,7 +332,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -100px;
+    right: -42%;
 }
 
 .grades-container h4 {
@@ -341,7 +340,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: -86px;
+    right: -36%;
     top: 2px;
     margin-bottom: 0px;
 }
@@ -352,11 +351,11 @@ svg {
 }
 
 .checklist-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -215px;
-    right: -427px;
-    padding: 20px;
+    top: 5em;
+    right: 38%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -371,7 +370,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -105px;
+    right: -45%;
     top: 0px;
 }
 
@@ -392,11 +391,11 @@ svg {
 }
 
 .pref-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -299px;
-    right: -858px;
-    padding: 20px;
+    top: 5em;
+    right: 1%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -411,7 +410,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -105px;
+    right: -46%;
     top: 0px;
 }
 
@@ -420,7 +419,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: 5px;
+    right: -1%;
     top: 0px;
     margin-bottom: -1px;
     text-align: center;
