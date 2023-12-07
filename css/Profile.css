@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    /* Your mobile-specific styles here */
+    /* Consider changing widths, positions, font sizes, etc. */
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.personaldet {
+    position: relative;
+    top: 15%;
+    left: 10%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    z-index: 1;
+    padding: 5%;
+    height: 50%;
+}
+
+.personaldet h3 {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-size: 140%;
+}
+
+.personaldet h4 {
+    top: 6em;
+    font-size: 100%;
+    position: absolute;
+    right: 88%;
+    transform: translateX(-50%);
+}
+
+.fullname-cont {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 75%;
+    top: 18%;
+    left: 15%;
+    z-index: 0;
+}
+
+.fullname-cont p{
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+
+.bday-cont {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 75%;
+    top: 33%;
+    left: 15%;
+    z-index: 0;
+}
+
+.bday-cont p{
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+
+.seggs-cont {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 75%;
+    top: 48%;
+    left: 15%;
+    z-index: 0;
+}
+
+.seggs-cont p{
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+
+.rel-cont {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 75%;
+    top: 63%;
+    left: 15%;
+    z-index: 0;
+}
+
+.rel-cont p{
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+
+.civ-cont {
+    position: absolute;
+    background-color: lightgray;
+    border-radius: 5px;
+    width: 75%;
+    top: 78%;
+    left: 15%;
+    z-index: 0;
+}
+
+.civ-cont p{
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}

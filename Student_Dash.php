@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Student_Dash.css">
@@ -102,8 +104,10 @@
                 <div class="col-md-12">
                     <!-- PROFILE CONTAINER -->
                     <div class="profile-container">
-                        <i class="fa-solid fa-user"></i>
-                        <h4>Profile</h4>
+                        <button id="profileButton">
+                            <i class="fa-solid fa-user"></i>
+                            <h4>Profile</h4>
+                        </button>
                     </div>
                     <!--CLASS ANNOUNCEMENTS-->
                     <div class="announcements-container">
@@ -133,6 +137,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="profileContent">
+        <!-- Profile content will be loaded here -->
     </div>
 
     <!-- PREFERENCES MODAL -->
@@ -334,8 +342,28 @@
                     isDarkModeToggled = false;
                 }
             });
+
+            // Modal close event listener
+            $('#darkModeModal').on('hide.bs.modal', function (e) {
+                if (isDarkModeToggled) {
+                    if (!confirm('Changes are not saved. Do you want to discard changes?')) {
+                        e.preventDefault(); // Prevent modal from closing
+                    } else {
+                        isDarkModeToggled = false; // Reset the flag
+                        $('#darkModeToggle').prop('checked', false); // Uncheck the toggle
+                    }
+                }
+            });
         });
 
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#profileButton').click(function () {
+            $('#profileContent').load('Profile.php');
+            });
+        });
     </script>
 
 </body>
