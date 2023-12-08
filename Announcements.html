@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Announcements.css">
+    <title>djprshs</title>
+</head>
+
+<body>
+
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
+
+    <!-- PERSONAL DETAILS -->
+    <div class="announcements">
+        <h3>Class Announcements</h3>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="anno-cont">
+                    <div class="container mt-5"></div>
+                    <h4>No announcements yet</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SCHOOL LOGO-->
+    <a href="Student_Dash.html">
+        <img src="img/school_logo.png" alt="Logo"
+            style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function applyDarkModeStyles() {
+                let storedDarkMode = localStorage.getItem('darkMode');
+
+                // Apply your dark mode changes similar to the ones within your toggle function
+                // For example:
+                if (storedDarkMode === 'true') {
+                    $('body').addClass('dark-mode');
+                    $('body').fadeTo(function () {
+                        $(this).css('background-color', '#3e3636').fadeIn();
+                    });
+                    $('.announcements').fadeTo(function () {
+                        $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                    });
+                    $('.announcements h4, .announcements h3').fadeTo(function () {
+                        $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                    });
+                    $('.anno-cont').fadeTo(function () {
+                        $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in text color change
+                    });
+                    $('.anno-cont h4, .anno-cont p').fadeTo(function () {
+                        $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                    });
+                } else {
+                    $('body').removeClass('dark-mode');
+                    $('body').fadeTo(function () {
+                        $(this).css('background-color', '#2962FF').fadeIn();
+                    });
+                    $('.announcements').fadeTo(function () {
+                        $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
+                    });
+                    $('.announcements h4').fadeTo(function () {
+                        $(this).css('color', 'black').fadeIn(); // Fade in text color change
+                    });
+                    $('.anno-cont').fadeTo(function () {
+                        $(this).css('background-color', '#ded4d4').fadeIn(); // Fade in text color change
+                    });
+                    $('.anno-cont h4, .anno-cont p').fadeTo(function () {
+                        $(this).css('color', 'black').fadeIn(); // Fade in text color change
+                    });
+                }
+            }
+
+            // Apply dark mode styles based on storedDarkMode
+            applyDarkModeStyles();
+
+        });
+    </script>
+
+</body>
+
+
+</html>

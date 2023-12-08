@@ -17,7 +17,7 @@ html {
     overflow-x: hidden;
 }
 
-.personaldet {
+.announcements {
     position: relative;
     top: 15%;
     left: 10%;
@@ -30,14 +30,14 @@ html {
     background-color: white;
 }
 
-.personaldet h3 {
+.announcements h3 {
     position: absolute;
     top: 5%;
     left: 2%;
     font-size: 120%;
 }
 
-.personaldet h4 {
+.announcements h4 {
     top: 20%;
     font-size: 100%;
     position: absolute;
@@ -45,186 +45,29 @@ html {
     transform: translateX(-50%);
 }
 
-.fullname-cont {
+.anno-cont {
     position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 18%;
-    left: 15%;
-    z-index: 0;
-    height: 10%;
+    top: 25%;
+    left: 2%;
+    width: 96%;
     border-style: solid;
     border-color: #25a7d7;
-}
-
-.fullname-cont p {
-    position: absolute;
-    top: 2%;
-    left: 2%;
-}
-
-.bday-cont {
-    position: absolute;
-    background-color: lightgray;
+    background-color: #ded4d4;
     border-radius: 5px;
-    width: 75%;
-    top: 33%;
-    left: 15%;
-    z-index: 0;
-    height: 10%;
-    border-style: solid;
-    border-color: #25a7d7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-
-.bday-cont p {
+.anno-cont h4 {
     position: absolute;
-    top: 1%;
-    left: 2%;
+    font-size: medium;
+    left: 5%;
+    top: 30%;
+    white-space: nowrap;
 }
 
-.seggs-cont {
+.anno-cont p {
     position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 48%;
-    left: 15%;
-    z-index: 0;
-    height: 10%;
-    border-style: solid;
-    border-color: #25a7d7;
-}
-
-
-.seggs-cont p {
-    position: absolute;
-    top: 5%;
-    left: 2%;
-}
-
-.rel-cont {
-    position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 63%;
-    left: 15%;
-    z-index: 0;
-    height: 10%;
-    border-style: solid;
-    border-color: #25a7d7;
-}
-
-.rel-cont p {
-    position: absolute;
-    top: 1%;
-    left: 2%;
-}
-
-.civ-cont {
-    position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 78%;
-    left: 15%;
-    z-index: 0;
-    height: 10%;
-    border-style: solid;
-    border-color: #25a7d7;
-}
-
-.civ-cont p {
-    position: absolute;
-    top: 1%;
-    left: 2%;
-}
-
-.contactdet {
-    position: relative;
-    top: 20%;
-    left: 10%;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    z-index: 1;
-    padding: 5%;
-    height: 30%;
-    background-color: white;
-}
-
-.contactdet h3 {
-    position: absolute;
-    top: 6%;
-    left: 2%;
-    font-size: 120%;
-}
-
-.contactdet h4 {
-    top: 23%;
-    font-size: 100%;
-    position: absolute;
-    right: 88%;
-    transform: translateX(-50%);
-}
-
-.add-cont {
-    position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 22%;
-    left: 15%;
-    z-index: 0;
-    height: 14%;
-    border-style: solid;
-    border-color: #25a7d7;
-}
-
-.add-cont p {
-    position: absolute;
-    top: 5%;
-    left: 2%;
-}
-
-.guard-cont {
-    position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 42%;
-    left: 15%;
-    z-index: 0;
-    height: 14%;
-    border-style: solid;
-    border-color: #25a7d7;
-}
-
-.guard-cont p {
-    position: absolute;
-    top: 5%;
-    left: 2%;
-}
-
-.num-cont {
-    position: absolute;
-    background-color: lightgray;
-    border-radius: 5px;
-    width: 75%;
-    top: 62%;
-    left: 15%;
-    z-index: 0;
-    height: 14%;
-    border-style: solid;
-    border-color: #25a7d7;
-}
-
-.num-cont p {
-    position: absolute;
-    top: 5%;
-    left: 2%;
+    white-space: nowrap;
 }
 
 

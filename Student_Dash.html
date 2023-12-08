@@ -112,10 +112,12 @@
                         </div>
                     </a>
                     <!--CLASS ANNOUNCEMENTS-->
-                    <div class="announcements-container">
-                        <i class="fa-solid fa-bell"></i>
-                        <h4>Class Announcements</h4>
-                    </div>
+                    <a href="Announcements.html">
+                        <div class="announcements-container">
+                            <i class="fa-solid fa-bell"></i>
+                            <h4>Class Announcements</h4>
+                        </div>
+                    </a>
                     <!-- ENROLLED SUBJECTS -->
                     <div class="enrolledsub-container">
                         <i class="fa-solid fa-book"></i>
@@ -202,6 +204,7 @@
             // Dark mode toggle functionality
             $('#darkModeToggle').change(function () {
                 isDarkModeToggled = true; // Update the flag when dark mode is toggled
+                saveDarkModeState($('#darkModeToggle').is(':checked')); // Save state to localStorage
             });
 
             // Save Changes button click
@@ -210,105 +213,105 @@
                     // Apply changes only if dark mode is toggled
                     if ($('#darkModeToggle').is(':checked')) {
                         $('body').addClass('dark-mode');
-                        $('.container-form, .container-form-right, .menu-container').fadeOut(function () {
+                        $('.container-form, .container-form-right, .menu-container').fadeTo(function () {
                             $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
                         });
-                        $('.stu_portal h2, .stu_portal h4').fadeOut(function () {
+                        $('.stu_portal h2, .stu_portal h4').fadeTo(function () {
                             $(this).css('color', 'white').fadeIn(); // Fade in text color change
                         });
-                        $('.fa-solid.fa-school').fadeOut(function () {
+                        $('.fa-solid.fa-school').fadeTo(function () {
                             $(this).css('color', 'white').fadeIn(); // Fade in icon color change
                         });
-                        $('#darkModeModal .modal-content').fadeOut(function () {
+                        $('#darkModeModal .modal-content').fadeTo(function () {
                             $(this).css('background-color', '#5d5555').fadeIn(); // Fade in modal background color change
                         });
-                        $('.profile-container').fadeOut(function () {
+                        $('.profile-container').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in profile container color change
                         });
-                        $('.announcements-container').fadeOut(function () {
+                        $('.announcements-container').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in announcements container color change
                         });
-                        $('.enrolledsub-container').fadeOut(function () {
+                        $('.enrolledsub-container').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in enrolledsubs container color change
                         });
-                        $('.grades-container').fadeOut(function () {
+                        $('.grades-container').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.checklist-container').fadeOut(function () {
+                        $('.checklist-container').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.pref-container').fadeOut(function () {
+                        $('.pref-container').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist').fadeOut(function () {
+                        $('.linerist').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist2').fadeOut(function () {
+                        $('.linerist2').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist3').fadeOut(function () {
+                        $('.linerist3').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist4').fadeOut(function () {
+                        $('.linerist4').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist5').fadeOut(function () {
+                        $('.linerist5').fadeTo(function () {
                             $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist6').fadeOut(function () {
+                        $('.linerist6').fadeTo(function () {
                             $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
                         });
                     } else {
                         $('body').removeClass('dark-mode');
-                        $('rect').fadeOut(function () {
+                        $('rect').fadeTo(function () {
                             $(this).css('fill', 'white').fadeIn(); // Fade in the color change
                         });
-                        $('.container-form, .container-form-right, .menu-container').fadeOut(function () {
+                        $('.container-form, .container-form-right, .menu-container').fadeTo(function () {
                             $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
                         });
-                        $('.stu_portal h2, .stu_portal h4').fadeOut(function () {
+                        $('.stu_portal h2, .stu_portal h4').fadeTo(function () {
                             $(this).css('color', 'white').fadeIn(); // Fade in text color change
                         });
-                        $('.fa-solid.fa-school').fadeOut(function () {
+                        $('.fa-solid.fa-school').fadeTo(function () {
                             $(this).css('color', 'white').fadeIn(); // Fade in icon color change
                         });
-                        $('#darkModeModal .modal-content').fadeOut(function () {
+                        $('#darkModeModal .modal-content').fadeTo(function () {
                             $(this).css('background-color', 'white').fadeIn(); // Fade in modal background color change
                         });
-                        $('.profile-container').fadeOut(function () {
+                        $('.profile-container').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in profile container color change
                         });
-                        $('.announcements-container').fadeOut(function () {
+                        $('.announcements-container').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in announcements container color change
                         });
-                        $('.enrolledsub-container').fadeOut(function () {
+                        $('.enrolledsub-container').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in enrolledsubs container color change
                         });
-                        $('.grades-container').fadeOut(function () {
+                        $('.grades-container').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                         });
-                        $('.checklist-container').fadeOut(function () {
+                        $('.checklist-container').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in checklist container color change
                         });
-                        $('.pref-container').fadeOut(function () {
+                        $('.pref-container').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in pref container color change
                         });
-                        $('.linerist').fadeOut(function () {
+                        $('.linerist').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist2').fadeOut(function () {
+                        $('.linerist2').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist3').fadeOut(function () {
+                        $('.linerist3').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist4').fadeOut(function () {
+                        $('.linerist4').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist5').fadeOut(function () {
+                        $('.linerist5').fadeTo(function () {
                             $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                         });
-                        $('.linerist6').fadeOut(function () {
+                        $('.linerist6').fadeTo(function () {
                             $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
                         });
                     }
@@ -334,108 +337,115 @@
                 // Apply your dark mode changes similar to the ones within your toggle function
                 // For example:
                 $('body').addClass('dark-mode');
-                $('.container-form, .container-form-right, .menu-container').fadeOut(function () {
+                $('.container-form, .container-form-right, .menu-container').fadeTo(function () {
                     $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
                 });
-                $('.stu_portal h2, .stu_portal h4').fadeOut(function () {
+                $('.stu_portal h2, .stu_portal h4').fadeTo(function () {
                     $(this).css('color', 'white').fadeIn(); // Fade in text color change
                 });
-                $('.fa-solid.fa-school').fadeOut(function () {
+                $('.fa-solid.fa-school').fadeTo(function () {
                     $(this).css('color', 'white').fadeIn(); // Fade in icon color change
                 });
-                $('#darkModeModal .modal-content').fadeOut(function () {
+                $('#darkModeModal .modal-content').fadeTo(function () {
                     $(this).css('background-color', '#5d5555').fadeIn(); // Fade in modal background color change
                 });
-                $('.profile-container').fadeOut(function () {
+                $('.profile-container').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in profile container color change
                 });
-                $('.announcements-container').fadeOut(function () {
+                $('.announcements-container').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in announcements container color change
                 });
-                $('.enrolledsub-container').fadeOut(function () {
+                $('.enrolledsub-container').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in enrolledsubs container color change
                 });
-                $('.grades-container').fadeOut(function () {
+                $('.grades-container').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.checklist-container').fadeOut(function () {
+                $('.checklist-container').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.pref-container').fadeOut(function () {
+                $('.pref-container').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist').fadeOut(function () {
+                $('.linerist').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist2').fadeOut(function () {
+                $('.linerist2').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist3').fadeOut(function () {
+                $('.linerist3').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist4').fadeOut(function () {
+                $('.linerist4').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist5').fadeOut(function () {
+                $('.linerist5').fadeTo(function () {
                     $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist6').fadeOut(function () {
+                $('.linerist6').fadeTo(function () {
                     $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
                 });
             } else {
                 $('body').removeClass('dark-mode');
-                $('.container-form, .container-form-right, .menu-container').fadeOut(function () {
+                $('.container-form, .container-form-right, .menu-container').fadeTo(function () {
                     $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
                 });
-                $('.stu_portal h2, .stu_portal h4').fadeOut(function () {
+                $('.stu_portal h2, .stu_portal h4').fadeTo(function () {
                     $(this).css('color', 'white').fadeIn(); // Fade in text color change
                 });
-                $('.fa-solid.fa-school').fadeOut(function () {
+                $('.fa-solid.fa-school').fadeTo(function () {
                     $(this).css('color', 'white').fadeIn(); // Fade in icon color change
                 });
-                $('#darkModeModal .modal-content').fadeOut(function () {
+                $('#darkModeModal .modal-content').fadeTo(function () {
                     $(this).css('background-color', 'white').fadeIn(); // Fade in modal background color change
                 });
-                $('.profile-container').fadeOut(function () {
+                $('.profile-container').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in profile container color change
                 });
-                $('.announcements-container').fadeOut(function () {
+                $('.announcements-container').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in announcements container color change
                 });
-                $('.enrolledsub-container').fadeOut(function () {
+                $('.enrolledsub-container').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in enrolledsubs container color change
                 });
-                $('.grades-container').fadeOut(function () {
+                $('.grades-container').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                 });
-                $('.checklist-container').fadeOut(function () {
+                $('.checklist-container').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in checklist container color change
                 });
-                $('.pref-container').fadeOut(function () {
+                $('.pref-container').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in pref container color change
                 });
-                $('.linerist').fadeOut(function () {
+                $('.linerist').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist2').fadeOut(function () {
+                $('.linerist2').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist3').fadeOut(function () {
+                $('.linerist3').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist4').fadeOut(function () {
+                $('.linerist4').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist5').fadeOut(function () {
+                $('.linerist5').fadeTo(function () {
                     $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
                 });
-                $('.linerist6').fadeOut(function () {
+                $('.linerist6').fadeTo(function () {
                     $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
                 });
 
                 // Reset the flag after changes are applied
                 isDarkModeToggled = false;
             }
+
+            // Save the dark mode state even if it's turned off
+            if (isDarkModeToggled) {
+                saveDarkModeState($('#darkModeToggle').is(':checked')); // Save the state
+                isDarkModeToggled = false; // Reset the toggle flag
+            }
+
 
         });
 

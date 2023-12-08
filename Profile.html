@@ -94,13 +94,22 @@
     <script>
         $(document).ready(function () {
             let isDarkModeToggled = false;
-            const storedDarkMode = localStorage.getItem('darkMode');
+            let storedDarkMode = localStorage.getItem('darkMode');
+
+            // Function to save dark mode state to localStorage
+            function saveDarkModeState(isDarkModeOn) {
+                localStorage.setItem('darkMode', isDarkModeOn);
+            }
 
             // Event listener for the dark mode toggle
             $('#darkModeToggle').change(function () {
                 isDarkModeToggled = true;
                 saveDarkModeState($('#darkModeToggle').is(':checked')); // Save state to localStorage
             });
+
+            if (storedDarkMode === null || storedDarkMode === undefined) {
+                storedDarkMode = 'false'; // Set a default value if storedDarkMode is null or undefined
+            }
 
             // Dark mode toggle functionality
             $('#darkModeToggle').change(function () {
@@ -111,26 +120,39 @@
                 // Apply your dark mode changes similar to the ones within your toggle function
                 // For example:
                 $('body').addClass('dark-mode');
-                $('body').fadeOut(function () {
+                $('body').fadeTo(function () {
                     $(this).css('background-color', '#3e3636').fadeIn();
                 });
-                $('.personaldet, .contactdet').fadeOut(function () {
+                $('.personaldet, .contactdet').fadeTo(function () {
                     $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
                 });
-                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeOut(function () {
+                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+                $('.fullname-cont, .bday-cont, .seggs-cont, .rel-cont, .civ-cont, .add-cont, .guard-cont, .num-cont').fadeTo(function () {
+                    $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in text color change
+                });
+                $('.fullname-cont p, .bday-cont p, .seggs-cont p, .rel-cont p, .civ-cont p, .add-cont p, .guard-cont p, .num-cont p').fadeTo(function () {
                     $(this).css('color', 'white').fadeIn(); // Fade in text color change
                 });
             } else {
                 $('body').removeClass('dark-mode');
-                $('body').fadeOut(function () {
+                $('body').fadeTo(function () {
                     $(this).css('background-color', '#0e6cc4').fadeIn();
                 });
-                $('.personaldet, .contactdet').fadeOut(function () {
+                $('.personaldet, .contactdet').fadeTo(function () {
                     $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
                 });
-                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeOut(function () {
+                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeTo(function () {
                     $(this).css('color', 'black').fadeIn(); // Fade in text color change
                 });
+
+                // Save the dark mode state even if it's turned off
+                if (isDarkModeToggled) {
+                    saveDarkModeState(false); // Save the state as 'false'
+                    isDarkModeToggled = false; // Reset the toggle flag
+                }
+
             }
         });
     </script>
