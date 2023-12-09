@@ -428,10 +428,23 @@ svg {
     text-align: center;
 }
 
+/* Custom CSS for adjusting modal size */
+#darkModeModal .modal-content {
+    height: 30vh;
+    /* Adjust the height as needed */
+}
+
 .dark-mode {
     /* Update styles for dark mode here */
     background-color: #333;
     color: #fff;
+}
+
+.modal-footer {
+    min-height: 50px;
+    /* Set the minimum height */
+    padding: 10px;
+    /* Add padding for better spacing */
 }
 
 /*waves****************************/
