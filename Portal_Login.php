@@ -35,43 +35,6 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="/css/Portal_Login.css">
     <title>djprshs</title>
     <style>
-        .form-group label,
-        .form-group input {
-            margin-top: -10px;
-            line-height: 40px;
-            /* Adjust the line height to move text up */
-        }
-
-        .form-group {
-            position: relative;
-            margin-top: 20px;
-            /* Add margin to the top of form groups */
-        }
-
-        :root {
-            --line-color: #0A4D98;
-            /* Change line color to red */
-        }
-
-        .form-group:first-child::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: -35px;
-            /* Adjust the top position of the text */
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--line-color);
-            border-radius: 5px;
-            z-index: 1;
-        }
-
-        .form-group a {
-            color: #0A4D98;
-            /* Change the color as needed */
-        }
-
         .login-text {
             position: absolute;
             top: -65px;
@@ -88,10 +51,22 @@ if (isset($_POST['submit'])) {
 
 <body>
 
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
     <!--STUDENT PORTAL TEXT-->
     <div class="stu_portal">
-        <i class="fa-solid fa-school" style="font-size: 40px; position: relative; top: 33px; right: 153px;"></i>
-        <h2 style="font-weight: bold;">Student Portal</h2>
+        <i class="fa-solid fa-school"
+            style="font-size: 25px; position: relative; top: -1em; right: 5em; color: white;"></i>
+        <h2
+            style="font-weight: bold; position: absolute; right: -2em; top: -1em; font-size: 140%; color: white; text-wrap: nowrap;">
+            Student
+            Portal</h2>
+        <div class="linerist2"></div>
     </div>
 
     <!--LOG IN CONTAINER-->
@@ -136,7 +111,7 @@ if (isset($_POST['submit'])) {
                     <i class="fa-regular fa-newspaper"
                         style="position: relative; top: -42px; font-size: 25px; left: 3px;"></i>
                     <h3 style="font-size: larger; position: relative; left: 38px; top: -67px;">News and Updates</h3>
-                    <div class="linerist"></div>
+                    <div class="linerist1"></div>
                     <!-- Placeholder News -->
                     <div class="news">
                         <div class="news-item">

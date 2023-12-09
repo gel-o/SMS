@@ -17,45 +17,145 @@
 
 <body>
 
-    <!--SCHOOL LOGO-->
-    <img src="img/school_logo.png" alt="Logo"
-        style="position: absolute; top: 20px; left: 20px; width: 100px; height: auto; z-index: 2;">
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
 
-    <!--ANIMATED SVG BACKGROUND-->
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
-        <defs>
-            <linearGradient id="bg">
-                <stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
-                <stop offset="50%" style="stop-color:rgba(76, 190, 255, 0.6)"></stop>
-                <stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
-            </linearGradient>
-            <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
-      s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
-        </defs>
-        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
-        <g>
-            <use xlink:href='#wave' opacity=".3">
-                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="10s"
-                    calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1"
-                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-            </use>
-            <use xlink:href='#wave' opacity=".6">
-                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="8s"
-                    calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"
-                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-            </use>
-            <use xlink:href='#wave' opacity=".9">
-                <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="6s"
-                    calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1"
-                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-            </use>
-        </g>
-    </svg>
+
+    <!-- PERSONAL DETAILS -->
+    <div class="personaldet">
+        <h3>Personal Details</h3>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <h4>Full Name</h4>
+                <div class="fullname-cont">
+                    <div class="container mt-5"></div>
+                    <p>Juan A. Dela Cruz</p>
+                </div>
+                <h4 style="top: 35%;">Birth Date</h4>
+                <div class="bday-cont">
+                    <div class="container mt-5"></div>
+                    <p>01/01/1999</p>
+                </div>
+                <h4 style="top: 51%; left: 7%;">Sex</h4>
+                <div class="seggs-cont">
+                    <div class="container mt-5"></div>
+                    <p>Male</p>
+                </div>
+                <h4 style="top: 65%; left: 6%;">Religion</h4>
+                <div class="rel-cont">
+                    <div class="container mt-5"></div>
+                    <p>Roman Catholic</p>
+                </div>
+                <h4 style="top: 78%; left: 5em;">Civil Status</h4>
+                <div class="civ-cont">
+                    <div class="container mt-5"></div>
+                    <p>Single</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT DETAILS -->
+    <div class="contactdet">
+        <h3>Contact Details</h3>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <h4 style="left: 7%;">Address</h4>
+                <div class="add-cont">
+                    <div class="container mt-5"></div>
+                    <p>Blk 1 Lot 1 Mabuhay Homes, Imus, Cavite</p>
+                </div>
+                <h4 style="top: 43%;">Guardian</h4>
+                <div class="guard-cont">
+                    <div class="container mt-5"></div>
+                    <p>Pedro P. Penduko</p>
+                </div>
+                <h4 style="top: 60%; left: 7%;">Contact Number</h4>
+                <div class="num-cont">
+                    <div class="container mt-5"></div>
+                    <p>09123456789</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SCHOOL LOGO-->
+    <a href="Student_Dash.html">
+        <img src="img/school_logo.png" alt="Logo"
+            style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
+    </a>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let isDarkModeToggled = false;
+            let storedDarkMode = localStorage.getItem('darkMode');
 
+            // Function to save dark mode state to localStorage
+            function saveDarkModeState(isDarkModeOn) {
+                localStorage.setItem('darkMode', isDarkModeOn);
+            }
+
+            // Event listener for the dark mode toggle
+            $('#darkModeToggle').change(function () {
+                isDarkModeToggled = true;
+                saveDarkModeState($('#darkModeToggle').is(':checked')); // Save state to localStorage
+            });
+
+            if (storedDarkMode === null || storedDarkMode === undefined) {
+                storedDarkMode = 'false'; // Set a default value if storedDarkMode is null or undefined
+            }
+
+            // Dark mode toggle functionality
+            $('#darkModeToggle').change(function () {
+                isDarkModeToggled = true; // Update the flag when dark mode is toggled
+            });
+
+            if (storedDarkMode === 'true') {
+                // Apply your dark mode changes similar to the ones within your toggle function
+                // For example:
+                $('body').addClass('dark-mode');
+                $('body').fadeTo(function () {
+                    $(this).css('background-color', '#3e3636').fadeIn();
+                });
+                $('.personaldet, .contactdet').fadeTo(function () {
+                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                });
+                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+                $('.fullname-cont, .bday-cont, .seggs-cont, .rel-cont, .civ-cont, .add-cont, .guard-cont, .num-cont').fadeTo(function () {
+                    $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in text color change
+                });
+                $('.fullname-cont p, .bday-cont p, .seggs-cont p, .rel-cont p, .civ-cont p, .add-cont p, .guard-cont p, .num-cont p').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+            } else {
+                $('body').removeClass('dark-mode');
+                $('body').fadeTo(function () {
+                    $(this).css('background-color', '#0e6cc4').fadeIn();
+                });
+                $('.personaldet, .contactdet').fadeTo(function () {
+                    $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
+                });
+                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeTo(function () {
+                    $(this).css('color', 'black').fadeIn(); // Fade in text color change
+                });
+
+                // Save the dark mode state even if it's turned off
+                if (isDarkModeToggled) {
+                    saveDarkModeState(false); // Save the state as 'false'
+                    isDarkModeToggled = false; // Reset the toggle flag
+                }
+
+            }
+        });
+    </script>
 
 </body>
 
