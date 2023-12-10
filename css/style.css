@@ -82,6 +82,7 @@ nav h4 a:hover {
     width: 100%;
     height: 100px;
     background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
 }
@@ -120,7 +121,7 @@ nav h4 a:hover {
 .header nav {
     display: flex;
     position: fixed;
-    left: 900px;
+    left: 35%;
     top: 60px;
 }
 
@@ -147,7 +148,7 @@ nav h4 a:hover {
 
 .front img {
     width: 100%;
-    height: 100%;
+    height: 900px;
     flex-shrink: 0;
 }
 
@@ -321,7 +322,7 @@ nav h4 a:hover {
     height: 96.694px;
     flex-shrink: 0;
     position: absolute;
-    left: 920px;
+    left: 46%;
 }
 
 .staff {
@@ -351,7 +352,7 @@ nav h4 a:hover {
     line-height: normal;
     position: absolute;
     top: 160px;
-    left: 885px;
+    left: 44%;
 }
 
 .text3 {
@@ -384,7 +385,7 @@ nav h4 a:hover {
     line-height: normal;
     position: absolute;
     top: 95px;
-    left: 925px;
+    left: 46%;
 }
 
 .num3 {
@@ -395,6 +396,65 @@ nav h4 a:hover {
     position: absolute;
     top: 95px;
     right: 220px;
+}
+
+.vision {
+    top: 1870px;
+    display: flex;
+    position: absolute;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision h1 {
+    color: #000;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: -45%;
+}
+
+.vision p {
+    color: #000;
+    text-align: justify;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 5%;
+
+}
+
+.mission {
+    top: 1870px;
+    display: flex;
+    position: absolute;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+}
+
+.mission h1 {
+    color: #000;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: -20%;
+}
+
+.mission p {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 5%;
 }
 
 .container {
