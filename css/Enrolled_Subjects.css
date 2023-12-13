@@ -53,6 +53,7 @@ html {
     left: 15%;
     z-index: 0;
 }
+
 .coresub1 p {
     position: absolute;
     top: 3em;
@@ -66,6 +67,7 @@ html {
     left: 15%;
     z-index: 0;
 }
+
 .coresub2 p {
     position: absolute;
     top: 6em;
@@ -79,6 +81,7 @@ html {
     left: 15%;
     z-index: 0;
 }
+
 .coresub3 p {
     position: absolute;
     top: 9em;
@@ -92,6 +95,7 @@ html {
     left: 15%;
     z-index: 0;
 }
+
 .coresub4 p {
     position: absolute;
     top: 12em;
@@ -106,6 +110,7 @@ html {
     left: 15%;
     z-index: 0;
 }
+
 .coresub5 p {
     position: absolute;
     top: 17em;
@@ -119,6 +124,7 @@ html {
     left: 15%;
     z-index: 0;
 }
+
 .coresub6 p {
     position: absolute;
     top: 20em;
@@ -158,6 +164,199 @@ html {
 .section6 {
     position: absolute;
     top: 20em;
+    left: 26%;
+}
+
+.instructor1 {
+    position: absolute;
+    top: 3em;
+    left: 22%;
+}
+
+.instructor2 {
+    position: absolute;
+    top: 6em;
+    left: 22%;
+}
+
+.instructor3 {
+    position: absolute;
+    top: 9em;
+    left: 22%;
+}
+
+.instructor4 {
+    position: absolute;
+    top: 12em;
+    left: 22%;
+}
+
+.instructor5 {
+    position: absolute;
+    top: 17em;
+    left: 22%;
+}
+
+.instructor6 {
+    position: absolute;
+    top: 20em;
+    left: 22%;
+}
+
+.appsub {
+    position: relative;
+    top: 20%;
+    left: 10%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    z-index: 1;
+    padding: 5%;
+    height: 50%;
+    background-color: white;
+}
+
+.appsub h3 {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-size: 120%;
+}
+
+.appsub h4 {
+    top: 25%;
+    font-size: 100%;
+    position: absolute;
+    right: 55%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+}
+
+.appsub1 {
+    position: absolute;
+    width: 75%;
+    top: 18%;
+    left: 15%;
+    z-index: 0;
+}
+
+.appsub1 p {
+    position: absolute;
+    top: 3em;
+    left: -27em;
+}
+
+.appsub2 {
+    position: absolute;
+    width: 75%;
+    top: 18%;
+    left: 15%;
+    z-index: 0;
+}
+
+.appsub2 p {
+    position: absolute;
+    top: 6em;
+    left: -26em;
+}
+
+.appsub3 {
+    position: absolute;
+    width: 75%;
+    top: 18%;
+    left: 15%;
+    z-index: 0;
+}
+
+.appsub3 p {
+    position: absolute;
+    top: 9em;
+    left: -27em;
+}
+
+.section1 {
+    position: absolute;
+    top: 3em;
+    left: 26%;
+}
+
+.section2 {
+    position: absolute;
+    top: 6em;
+    left: 26%;
+}
+
+.section3 {
+    position: absolute;
+    top: 9em;
+    left: 26%;
+}
+
+.instructor1 {
+    position: absolute;
+    top: 3em;
+    left: 22%;
+}
+
+.instructor2 {
+    position: absolute;
+    top: 6em;
+    left: 22%;
+}
+
+.instructor3 {
+    position: absolute;
+    top: 9em;
+    left: 22%;
+}
+
+.specsub {
+    position: relative;
+    top: 25%;
+    left: 10%;
+    margin-bottom: 20%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    z-index: 1;
+    padding: 5%;
+    height: 50%;
+    background-color: white;
+}
+
+.specsub h3 {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-size: 120%;
+}
+
+.specsub h4 {
+    top: 25%;
+    font-size: 100%;
+    position: absolute;
+    right: 55%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+}
+
+.specsub1 {
+    position: absolute;
+    width: 75%;
+    top: 18%;
+    left: 15%;
+    z-index: 0;
+}
+
+.specsub1 p {
+    position: absolute;
+    top: 3em;
+    left: -27em;
+}
+
+.section1 {
+    position: absolute;
+    top: 3em;
     left: 26%;
 }
 
