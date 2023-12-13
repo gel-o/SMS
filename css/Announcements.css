@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    /* Your mobile-specific styles here */
+    /* Consider changing widths, positions, font sizes, etc. */
+}
+
 body,
 html {
     height: 100%;
@@ -10,159 +15,61 @@ html {
     padding: 0;
     background-color: #0e6cc4;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
+.announcements {
+    position: relative;
+    top: 15%;
+    left: 10%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    z-index: 1;
+    padding: 5%;
+    height: 40%;
+    background-color: white;
+}
 
-.container-form,
-.container-form-right {
+.announcements h3 {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-size: 120%;
+}
+
+.announcements h4 {
+    top: 20%;
+    font-size: 100%;
+    position: absolute;
+    right: 88%;
+    transform: translateX(-50%);
+}
+
+.anno-cont {
     position: absolute;
     top: 25%;
-    z-index: 1;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 30%;
-    /* Set the width */
-    border-radius: 15px;
-    /* Rounded corners */
-}
-
-.container-form {
-    left: 18%;
-    /* Adjust the left position */
-    transform: translateY(-50%);
-    transform: translateY(-10px);
-    /* Adjust translateY to elevate the container slightly */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    /* Adjust the box shadow to complement the elevation */
-}
-
-.container-form-right {
-    right: 10%;
-    /* Adjust the right position */
-    transform: translateY(-50%);
-    transform: translateY(-10px);
-    /* Adjust translateY to elevate the container slightly */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.container-form-right h3 {
-    font-size: larger;
-    font-weight: bolder;
-    position: relative;
-    top: -43px;
-    /* Adjust this value to move the text further up */
-}
-
-.linerist1 {
-    position: relative;
-    top: -32%;
-    left: -1%;
-    width: 101%;
-    height: 3px;
-    background-color: #0A4D98;
-    /* Adjust line color */
-    margin-top: 10px;
-    /* Adjust distance between text and line */
-    border-radius: 1px;
-}
-
-.linerist2 {
-    position: absolute;
-    top: 0em;
-    left: -430%;
-    width: 3130%;
-    height: 3px;
-    /* Adjust line color */
-    margin-top: 10px;
-    /* Adjust distance between text and line */
-    border-radius: 1px;
-    background-color: white;
-}
-
-.form-group label,
-.form-group input {
-    margin-top: -10px;
-    line-height: 40px;
-    /* Adjust the line height to move text up */
-}
-
-.form-group {
-    position: relative;
-    margin-top: 20px;
-    /* Add margin to the top of form groups */
-}
-
-:root {
-    --line-color: #0A4D98;
-    /* Change line color to red */
-}
-
-.form-group:first-child::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -35px;
-    /* Adjust the top position of the text */
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--line-color);
+    left: 2%;
+    width: 96%;
+    border-style: solid;
+    border-color: #25a7d7;
+    background-color: #ded4d4;
     border-radius: 5px;
-    z-index: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.form-group a {
-    color: #0A4D98;
-    /* Change the color as needed */
-}
-
-.login-text {
+.anno-cont h4 {
     position: absolute;
-    top: -65px;
-    /* Adjust the top position of the login text */
-    left: 35px;
-    /* Adjust the left position of the login text */
-    padding: 0 5px;
-    /* Add some padding */
-    font-size: larger;
-    font-weight: bolder;
+    font-size: medium;
+    left: 5%;
+    top: 30%;
+    white-space: nowrap;
 }
 
-label[for="studentNumber"],
-label[for="password"] {
-    font-weight: bolder;
-}
-
-.btn-primary {
-    background-color: #0A4D98;
-    /* Change to your desired color code */
-    transition: background-color 0.3s;
-    margin-bottom: -20px;
-}
-
-.btn-primary:hover {
-    background-color: #8BBDF5;
-    /* Change to your desired hover color code */
-}
-
-.stu_portal {
+.anno-cont p {
     position: absolute;
-    top: 122px;
-    left: 28%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: black;
-    /* Change the text color */
-    z-index: 10;
-    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
 }
 
-.news {
-    top: 10px;
-    position: relative;
-}
 
 /*waves****************************/
 

@@ -13,18 +13,21 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #0e6cc4;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .container-form,
 .container-form-right {
     position: absolute;
-    top: 22%;
+    top: 19%;
     z-index: 1;
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     width: 30%;
+    height: 16em;
     /* Set the width */
     border-radius: 15px;
     /* Rounded corners */
@@ -82,7 +85,7 @@ html {
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
-    margin-top: 10px;
+    margin-top: -7%;
     /* Adjust distance between text and line */
     border-radius: 5px;
 }
@@ -92,7 +95,7 @@ html {
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
-    margin-top: 10px;
+    margin-top: -7%;
     /* Adjust distance between text and line */
     border-radius: 5px;
 }
@@ -102,22 +105,23 @@ html {
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
-    margin-top: 10px;
+    margin-top: -7%;
     /* Adjust distance between text and line */
     border-radius: 5px;
 }
 
 .linerist6 {
     position: relative;
-    top: -3px;
-    left: -60px;
-    width: 475%;
+    top: -2em;
+    left: -30px;
+    width: 383%;
     height: 3px;
     background-color: #0A4D98;
     /* Adjust line color */
     margin-top: 10px;
     /* Adjust distance between text and line */
     border-radius: 1px;
+    background-color: white;
 }
 
 .btn-primary {
@@ -160,9 +164,9 @@ svg {
 
 .menu-container {
     position: relative;
-    top: 61%;
-    height: 320px;
-    right: -345px;
+    top: 55%;
+    left: 18%;
+    height: 250px;
     border-radius: 20px;
     z-index: 10;
     /* Adjust the z-index */
@@ -194,17 +198,16 @@ svg {
 }
 
 .profile-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -33px;
-    right: 24px;
+    top: -2em;
+    right: 74%;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
-    padding: 10px;
     color: white;
     cursor: pointer;
-    padding: 20px;
+    padding: 10px;
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
@@ -214,7 +217,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -100px;
+    right: -43%;
 }
 
 .profile-container h4 {
@@ -222,7 +225,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: -86px;
+    right: -37%;
     top: 2px;
     margin-bottom: 0px;
 }
@@ -233,11 +236,11 @@ svg {
 }
 
 .announcements-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -120px;
-    right: -424px;
-    padding: 20px;
+    top: -2em;
+    right: 38%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -252,7 +255,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -105px;
+    right: -45%;
     top: 0px;
 }
 
@@ -261,7 +264,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: 5px;
+    right: -1%;
     top: 0px;
     margin-bottom: -1px;
     text-align: center;
@@ -273,11 +276,11 @@ svg {
 }
 
 .enrolledsub-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -205px;
-    right: -858px;
-    padding: 20px;
+    top: -2em;
+    right: 1%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -313,17 +316,16 @@ svg {
 }
 
 .grades-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -130px;
-    right: 24px;
+    top: 5em;
+    right: 74%;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
     padding: 10px;
     color: white;
     cursor: pointer;
-    padding: 20px;
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
@@ -333,7 +335,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -100px;
+    right: -42%;
 }
 
 .grades-container h4 {
@@ -341,7 +343,7 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: -86px;
+    right: -36%;
     top: 2px;
     margin-bottom: 0px;
 }
@@ -352,11 +354,11 @@ svg {
 }
 
 .checklist-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -215px;
-    right: -427px;
-    padding: 20px;
+    top: 5em;
+    right: 38%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -371,7 +373,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -105px;
+    right: -45%;
     top: 0px;
 }
 
@@ -392,11 +394,11 @@ svg {
 }
 
 .pref-container {
-    position: relative;
+    position: absolute;
     width: 25%;
-    top: -299px;
-    right: -858px;
-    padding: 20px;
+    top: 5em;
+    right: 1%;
+    padding: 10px;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
@@ -411,7 +413,7 @@ svg {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -105px;
+    right: -46%;
     top: 0px;
 }
 
@@ -420,10 +422,16 @@ svg {
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: 5px;
+    right: -1%;
     top: 0px;
     margin-bottom: -1px;
     text-align: center;
+}
+
+/* Custom CSS for adjusting modal size */
+#darkModeModal .modal-content {
+    height: 30vh;
+    /* Adjust the height as needed */
 }
 
 .dark-mode {
@@ -432,14 +440,179 @@ svg {
     color: #fff;
 }
 
-svg {
-    position: absolute;
+.modal-footer {
+    min-height: 50px;
+    /* Set the minimum height */
+    padding: 10px;
+    /* Add padding for better spacing */
+}
+
+/*waves****************************/
+
+
+.box {
+    position: fixed;
+    top: 0;
+    transform: rotate(80deg);
+    left: 0;
+}
+
+.wave {
+    position: fixed;
     top: 0;
     left: 0;
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    background: #0af;
+    width: 1500px;
+    height: 1300px;
+    margin-left: -150px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 7000ms infinite linear;
+}
+
+.wave.-three {
+    animation: drift 7500ms infinite linear;
+    position: fixed;
+    background-color: #77daff;
+}
+
+.wave.-two {
+    animation: drift 3000ms infinite linear;
+    opacity: .1;
+    background: black;
+    position: fixed;
+}
+
+.box:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    display: block;
-    background-color: #0e4166;
-    background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+/*LOADING SPACE*/
+
+.contain {
+    animation-delay: 4s;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    background: #25a7d7;
+    background: -webkit-linear-gradient(#25a7d7, #2962FF);
+    background: linear-gradient(#25a7d7, #25a7d7);
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 5px;
+}
+
+/*Animation*/
+.icon:nth-child(2) img {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s
+}
+
+.icon:nth-child(3) img {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s
+}
+
+.icon:nth-child(4) img {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s
+}
+
+.icon img {
+    -webkit-animation: anim 2s ease infinite;
+    animation: anim 2s ease infinite;
+    -webkit-transform: scale(0, 0) rotateZ(180deg);
+    transform: scale(0, 0) rotateZ(180deg);
+}
+
+@-webkit-keyframes anim {
+    0% {
+        -webkit-transform: scale(0, 0) rotateZ(-90deg);
+        transform: scale(0, 0) rotateZ(-90deg);
+        opacity: 0
+    }
+
+    30% {
+        -webkit-transform: scale(1, 1) rotateZ(0deg);
+        transform: scale(1, 1) rotateZ(0deg);
+        opacity: 1
+    }
+
+    50% {
+        -webkit-transform: scale(1, 1) rotateZ(0deg);
+        transform: scale(1, 1) rotateZ(0deg);
+        opacity: 1
+    }
+
+    80% {
+        -webkit-transform: scale(0, 0) rotateZ(90deg);
+        transform: scale(0, 0) rotateZ(90deg);
+        opacity: 0
+    }
+}
+
+@keyframes anim {
+    0% {
+        -webkit-transform: scale(0, 0) rotateZ(-90deg);
+        transform: scale(0, 0) rotateZ(-90deg);
+        opacity: 0
+    }
+
+    30% {
+        -webkit-transform: scale(1, 1) rotateZ(0deg);
+        transform: scale(1, 1) rotateZ(0deg);
+        opacity: 1
+    }
+
+    50% {
+        -webkit-transform: scale(1, 1) rotateZ(0deg);
+        transform: scale(1, 1) rotateZ(0deg);
+        opacity: 1
+    }
+
+    80% {
+        -webkit-transform: scale(0, 0) rotateZ(90deg);
+        transform: scale(0, 0) rotateZ(90deg);
+        opacity: 0
+    }
 }
