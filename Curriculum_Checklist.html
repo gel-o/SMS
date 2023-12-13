@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Curriculum_Checklist.css">
+    <title>djprshs</title>
+</head>
+
+<body>
+
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
+    <!--SCHOOL LOGO-->
+    <a href="Student_Dash.html">
+        <img src="img/school_logo.png" alt="Logo"
+            style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
+    </a>
+
+    <div class="container">
+        <div class="container-table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="text-center">Subject</th>
+                        <th colspan="3" class="text-center">Grade</th>
+                        <th colspan="3" class="text-center">Remarks</th>
+                    </tr>
+                    <tr>
+                        <th colspan="9" class="text-center">First Semester</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 10 rows for subjects -->
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 1</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 2</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 3</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 4</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 5</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container2"> <!-- Add some top margin for separation -->
+        <div class="container-table">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="text-center">Subject</th>
+                        <th colspan="3" class="text-center">Grade</th>
+                        <th colspan="3" class="text-center">Remarks</th>
+                    </tr>
+                    <tr>
+                        <th colspan="9" class="text-center">Second Semester</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 10 rows for subjects (Similar to the First Semester table) -->
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 1</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 2</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" class="text-center">Subject 3</td>
+                        <td colspan="3" class="text-center"></td>
+                        <td colspan="3" class="text-center"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let isDarkModeToggled = false;
+            let storedDarkMode = localStorage.getItem('darkMode');
+
+            // Function to save dark mode state to localStorage
+            function saveDarkModeState(isDarkModeOn) {
+                localStorage.setItem('darkMode', isDarkModeOn);
+            }
+
+            // Event listener for the dark mode toggle
+            $('#darkModeToggle').change(function () {
+                isDarkModeToggled = true;
+                saveDarkModeState($('#darkModeToggle').is(':checked')); // Save state to localStorage
+            });
+
+            if (storedDarkMode === null || storedDarkMode === undefined) {
+                storedDarkMode = 'false'; // Set a default value if storedDarkMode is null or undefined
+            }
+
+            // Dark mode toggle functionality
+            $('#darkModeToggle').change(function () {
+                isDarkModeToggled = true; // Update the flag when dark mode is toggled
+            });
+
+            if (storedDarkMode === 'true') {
+                // Apply your dark mode changes similar to the ones within your toggle function
+                // For example:
+                $('body').addClass('dark-mode');
+                $('body').fadeTo(function () {
+                    $(this).css('background-color', '#3e3636').fadeIn();
+                });
+                $('.coresub').fadeTo(function () {
+                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                });
+
+                $('.appsub').fadeTo(function () {
+                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                });
+
+                $('.appsub h3, .appsub h4').fadeTo(function () {
+                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                });
+
+                $('.specsub h3, .specsub h4').fadeTo(function () {
+                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                });
+
+                $('.specsub').fadeTo(function () {
+                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                });
+
+                $('.coresub h3, .coresub h4 ').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+                $('.coresub1, .coresub2, .coresub3, .coresub4, .coresub5, .coresub6').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+
+                $('.appsub1, .appsub2, .appsub3').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+
+                $('.specsub1').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+
+                $('.section1, .section2, .section3, .section4, .section5, .section6').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+
+                $('.instructor1, .instructor2, .instructor3, .instructor4, .instructor5, .instructor6').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                });
+            } else {
+                $('body').removeClass('dark-mode');
+                $('body').fadeTo(function () {
+                    $(this).css('background-color', '#0e6cc4').fadeIn();
+                });
+                $('.personaldet, .contactdet').fadeTo(function () {
+                    $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
+                });
+                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeTo(function () {
+                    $(this).css('color', 'black').fadeIn(); // Fade in text color change
+                });
+
+                // Save the dark mode state even if it's turned off
+                if (isDarkModeToggled) {
+                    saveDarkModeState(false); // Save the state as 'false'
+                    isDarkModeToggled = false; // Reset the toggle flag
+                }
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>
