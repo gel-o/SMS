@@ -1,42 +1,6 @@
-<?php
-session_start();
-include_once("connections/connection.php");
-$con = connection();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = $con->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $_SESSION['user_id'] = $row['id'];
-        $_SESSION['user_type'] = $row['user_type'];
-
-        switch ($row['user_type']) {
-            case 'admin':
-                header("Location: Admin_Dash.html");
-                break;
-            case 'registrar':
-                header("Location: Registrar_Dash.html");
-                break;
-            case 'teacher':
-                header("Location: Teacher_Dash.html");
-                break;
-            case 'student':
-                header("Location: Student_Dash.php");
-                break;
-        }
-    } else {
-        $error = "Invalid username or password";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="linerist2"></div>
     </div>
 
-
     <!--LOG IN CONTAINER-->
     <div class="container-form">
         <div class="container mt-5">
@@ -96,9 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="line"></div>
                             <?php if (isset($error)) echo "<p>$error</p>"; ?>
                             <label for="username" style="top: -30px; position: relative;">Username</label>
-                            <input type="text" class="form-control" name="username"
-                                placeholder="Enter username" style="top: -30px; position: relative;"
-                                title="Please enter a correct username" required>
+                            <input type="text" class="form-control" name="username" placeholder="Enter username"
+                                style="top: -30px; position: relative;" title="Please enter a correct username"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="password" style="top: -30px; position: relative;">Password</label>
@@ -133,15 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                         <div class="news-item">
-                            <h5>New Feature Update</h5>
-                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="news-item">
                             <h5>3rd Quarterly Exam Schedule</h5>
-                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="news-item">
-                            <h5>No classes</h5>
                             <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                         <!-- Add more news items as needed -->
