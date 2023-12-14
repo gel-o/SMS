@@ -1,61 +1,42 @@
 <?php
+session_start();
 include_once("connections/connection.php");
 $con = connection();
-session_start();
 
-// login form processing
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $email = $_POST['email'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // query the database to check if the user exists
-    $sql = "SELECT * FROM login WHERE email='$email' AND password='$password'";
+    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
     $result = $con->query($sql);
 
-    // if user exists, create a session and redirect to dashboard
-    if(mysqli_num_rows($result) === 1){
-        $row = mysqli_fetch_assoc($result);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_type'] = $row['user_type'];
 
-        if($row['email'] == "admin" && $row['password'] === $password){
-            $_SESSION['firstName'] = $firstName;
-            echo "<h1>ADMIN</h1>";
-            // header("location: superAdminDash.php");
-            // exit();
-
+        switch ($row['user_type']) {
+            case 'admin':
+                header("Location: Admin_Dash.html");
+                break;
+            case 'registrar':
+                header("Location: Registrar_Dash.html");
+                break;
+            case 'teacher':
+                header("Location: Teacher_Dash.html");
+                break;
+            case 'student':
+                header("Location: Student_Dash.php");
+                break;
         }
-        if($row['email'] == "registrar" && $row['password'] === $password){
-            // header("location: supervisorDash.php");
-            // exit();
-            echo "<h1>REGISTRAR</h1>";
-        
-        }
-        }
-        if($row['email'] == "teacher" && $row['password'] === $password){
-            // header("location: supervisorDash.php");
-            // exit();
-            echo "<h1>TEACHER</h1>";
-        
-        }
-        if($row['email'] === $email && $row['password'] === $password){
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['firstName'] = $row['firstName'];
-            $_SESSION['lastName'] = $row['lastName'];
-            $_SESSION['id'] = $row['id'];
-
-            header("location: Student_Dash.php");
-            exit();   
-        }
-        else {
-        //   header("location: login.php?error=Incorrect Email or Password");
-        //   exit();
-        echo "<h1>ERROR</h1>";
-        } 
+    } else {
+        $error = "Invalid username or password";
     }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,7 +98,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 </head>
 
 <body>
-
     <!--STUDENT PORTAL TEXT-->
     <div class="stu_portal">
         <i class="fa-solid fa-school" style="font-size: 40px; position: relative; top: 33px; right: 153px;"></i>
@@ -130,20 +110,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <!-- Form -->
-                    <form method="post">
+                    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <div class="form-group">
                             <i class="fa-solid fa-arrow-right-to-bracket"
                                 style="top: -65px; position: relative; font-size: 25px; left: 5px;"></i>
                             <div class="login-text">Log In</div>
                             <div class="line"></div>
-                            <label for="email" style="top: -30px; position: relative;">Student Number</label>
-                            <input type="text" class="form-control" id="email"
-                                placeholder="Enter student number" style="top: -30px; position: relative;"
-                                title="Please enter numbers only" required>
+                            <?php if (isset($error)) echo "<p>$error</p>"; ?>
+                            <label for="username" style="top: -30px; position: relative;">Username</label>
+                            <input type="text" class="form-control" name="username"
+                                placeholder="Enter username" style="top: -30px; position: relative;"
+                                title="Please enter a correct username" required>
                         </div>
                         <div class="form-group">
                             <label for="password" style="top: -30px; position: relative;">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter password"
+                            <input type="password" class="form-control" name="password" placeholder="Enter password"
                                 style="top: -31px; position: relative;">
                             <small><a href="#" id="forgotPasswordLink" data-toggle="modal"
                                     data-target="#forgotPasswordModal" style="top: -30px; position: relative;">Forgot

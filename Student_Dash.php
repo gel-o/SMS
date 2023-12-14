@@ -1,3 +1,30 @@
+<?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Portal_Login.php"); // Redirect to the login page if not logged in
+    exit();
+}
+// Database connection
+include_once("connections/connection.php");
+$con = connection();
+
+// Retrieve user information
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM users WHERE id = '$user_id'";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+} else {
+    // Handle the case where the user is not found
+    echo "User not found.";
+    exit();
+}
+
+$con->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,14 +52,13 @@
         <i class="fa-solid fa-school"
             style="font-size: 25px; position: relative; top: -1em; right: 5em; color: white;"></i>
         <h2 style="font-weight: bold; position: absolute; right: 5em; top: -1em; font-size: 140%; color: white;">
-            Welcome, </h2>
+            Welcome, <?php echo $user['firstName'];?>!</h2>
         <div class="linerist6"></div>
         <h4 style="font-size: 80%; position: relative; right: 2em; top: -2em; color: white;">Last Login: November 22,
             2023 10:35:20
-            am</h4>
-
+            am <a style="color: pink;" href="logout.php">LOGOUT</a></h4>
+        
     </div>
-
     <!-- DETAILS CONTAINER -->
     <div class="container-form">
         <div class="container mt-5">
@@ -119,20 +145,26 @@
                         </div>
                     </a>
                     <!-- ENROLLED SUBJECTS -->
-                    <div class="enrolledsub-container">
-                        <i class="fa-solid fa-book"></i>
-                        <h4>Enrolled Subjects</h4>
-                    </div>
+                    <a href="Enrolled_Subjects.html">
+                        <div class="enrolledsub-container">
+                            <i class="fa-solid fa-book"></i>
+                            <h4>Enrolled Subjects</h4>
+                        </div>
+                    </a>
                     <!-- GRADES-->
-                    <div class="grades-container">
-                        <i class="fa-solid fa-chart-column"></i>
-                        <h4>Grades</h4>
-                    </div>
+                    <a href="Grades.html">
+                        <div class="grades-container">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <h4>Grades</h4>
+                        </div>
+                    </a>
                     <!-- CURRICULUM-->
-                    <div class="checklist-container">
-                        <i class="fa-solid fa-list-check"></i>
-                        <h4>Curriculum Checklist</h4>
-                    </div>
+                    <a href="Curriculum_Checklist.html">
+                        <div class="checklist-container">
+                            <i class="fa-solid fa-list-check"></i>
+                            <h4>Curriculum Checklist</h4>
+                        </div>
+                    </a>
                     <!-- PREFERENCES -->
                     <div class="pref-container" id="prefContainer">
                         <i class="fa-solid fa-user-gear"></i>
@@ -142,7 +174,6 @@
             </div>
         </div>
     </div>
-
     <!-- PREFERENCES MODAL -->
     <div class="modal" id="darkModeModal">
         <div class="modal-dialog">
@@ -197,7 +228,8 @@
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="savePasswordBtn" data-dismiss="modal" style="position: absolute; top: 78%;">Save
+                    <button type="button" class="btn btn-primary" id="savePasswordBtn" data-dismiss="modal"
+                        style="position: absolute; top: 78%;">Save
                         Password</button>
                 </div>
 
@@ -510,7 +542,6 @@
         });
 
     </script>
-
 </body>
 
 </html>
