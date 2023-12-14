@@ -1,3 +1,40 @@
+<?php
+session_start();
+include_once("connections/connection.php");
+$con = connection();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $result = $con->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_type'] = $row['user_type'];
+
+        switch ($row['user_type']) {
+            case 'admin':
+                header("Location: Admin_Dash.html");
+                break;
+            case 'registrar':
+                header("Location: Registrar_Dash.html");
+                break;
+            case 'teacher':
+                header("Location: Teacher_Dash.html");
+                break;
+            case 'student':
+                header("Location: Student_Dash.php");
+                break;
+        }
+    } else {
+        $error = "Invalid username or password";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,14 +71,11 @@
     </div>
 
     <div class="stu_portal">
-        <i class="fa-solid fa-school" style="font-size: 40px; position: relative; top: 33px; right: 153px;"></i>
-        <h2 style="font-weight: bold;">Student Portal</h2>
         <i class="fa-solid fa-school"
             style="font-size: 25px; position: relative; top: -1em; right: 5em; color: white;"></i>
         <h2
-            style="font-weight: bold; position: absolute; right: -2em; top: -1em; font-size: 140%; color: white; text-wrap: nowrap;">
-            Student
-            Portal</h2>
+            style="font-weight: bold; position: absolute; right: -16em; top: -1em; font-size: 140%; color: white; text-wrap: nowrap;">
+            Dr. Jose P. Rizal Senior High School Portal</h2>
         <div class="linerist2"></div>
     </div>
 
@@ -56,7 +90,7 @@
                             <i class="fa-solid fa-arrow-right-to-bracket"
                                 style="top: -65px; position: relative; font-size: 25px; left: 5px;"></i>
                             <div class="login-text">Log In</div>
-                            <div class="line"></div>
+                            <div class="linerist"></div>
                             <?php if (isset($error)) echo "<p>$error</p>"; ?>
                             <label for="username" style="top: -30px; position: relative;">Username</label>
                             <input type="text" class="form-control" name="username" placeholder="Enter username"
@@ -80,7 +114,7 @@
     </div>
 
     <!--NEWS AND UPDATES CONTAINER-->
-    <div class="container-form-right" style="right: 18%;">
+    <div class="container-form-right" style="right: 18%; height: 52%;">
         <!-- Second container on the right side -->
         <div class="container mt-5">
             <div class="row justify-content-center">
@@ -88,18 +122,19 @@
                     <i class="fa-regular fa-newspaper"
                         style="position: relative; top: -42px; font-size: 25px; left: 3px;"></i>
                     <h3 style="font-size: larger; position: relative; left: 38px; top: -67px;">News and Updates</h3>
-                    <div class="linerist"></div>
+                    <div class="linerist"
+                        style="background-color: #0e6cc4; height: 3px; border-radius: 5px; top: -115%; position: relative;">
+                    </div>
                     <!-- Placeholder News -->
                     <div class="news">
-                        <div class="news-item">
+                        <div class="news-item" style="position: absolute; top: 30%;">
                             <h5>Important Announcement</h5>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
-                        <div class="news-item">
+                        <div class="news-item" style="position: absolute; top: 200%;">
                             <h5>3rd Quarterly Exam Schedule</h5>
                             <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
-                        <!-- Add more news items as needed -->
                     </div>
                 </div>
             </div>
@@ -154,7 +189,7 @@
 
     <!--SCHOOL LOGO-->
     <img src="img/school_logo.png" alt="Logo"
-        style="position: absolute; top: 20px; left: 20px; width: 100px; height: auto; z-index: 2;">
+        style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

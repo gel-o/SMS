@@ -25,53 +25,54 @@
         <img src="img/school_logo.png" alt="Logo"
             style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
     </a>
+    <div class="wrapper" style="height: auto;">
+        <div class="container">
+            <div class="container-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="text-center">Subject</th>
+                            <th colspan="3" class="text-center">Grade</th>
+                            <th colspan="3" class="text-center">Remarks</th>
+                        </tr>
+                        <tr>
+                            <th colspan="9" class="text-center sem-heading1">First Semester</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 10 rows for subjects -->
+                        <tr>
+                            <td colspan="3" class="text-center">Subject 1</td>
+                            <td colspan="3" class="text-center"></td>
+                            <td colspan="3" class="text-center"></td>
+                        </tr>
 
-    <div class="container">
-        <div class="container-table">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th colspan="3" class="text-center">Subject</th>
-                        <th colspan="3" class="text-center">Grade</th>
-                        <th colspan="3" class="text-center">Remarks</th>
-                    </tr>
-                    <tr>
-                        <th colspan="9" class="text-center">First Semester</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 10 rows for subjects -->
-                    <tr>
-                        <td colspan="3" class="text-center">Subject 1</td>
-                        <td colspan="3" class="text-center"></td>
-                        <td colspan="3" class="text-center"></td>
-                    </tr>
+                        <tr>
+                            <td colspan="3" class="text-center">Subject 2</td>
+                            <td colspan="3" class="text-center"></td>
+                            <td colspan="3" class="text-center"></td>
+                        </tr>
 
-                    <tr>
-                        <td colspan="3" class="text-center">Subject 2</td>
-                        <td colspan="3" class="text-center"></td>
-                        <td colspan="3" class="text-center"></td>
-                    </tr>
+                        <tr>
+                            <td colspan="3" class="text-center">Subject 3</td>
+                            <td colspan="3" class="text-center"></td>
+                            <td colspan="3" class="text-center"></td>
+                        </tr>
 
-                    <tr>
-                        <td colspan="3" class="text-center">Subject 3</td>
-                        <td colspan="3" class="text-center"></td>
-                        <td colspan="3" class="text-center"></td>
-                    </tr>
+                        <tr>
+                            <td colspan="3" class="text-center">Subject 4</td>
+                            <td colspan="3" class="text-center"></td>
+                            <td colspan="3" class="text-center"></td>
+                        </tr>
 
-                    <tr>
-                        <td colspan="3" class="text-center">Subject 4</td>
-                        <td colspan="3" class="text-center"></td>
-                        <td colspan="3" class="text-center"></td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="3" class="text-center">Subject 5</td>
-                        <td colspan="3" class="text-center"></td>
-                        <td colspan="3" class="text-center"></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <td colspan="3" class="text-center">Subject 5</td>
+                            <td colspan="3" class="text-center"></td>
+                            <td colspan="3" class="text-center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -85,7 +86,7 @@
                         <th colspan="3" class="text-center">Remarks</th>
                     </tr>
                     <tr>
-                        <th colspan="9" class="text-center">Second Semester</th>
+                        <th colspan="9" class="text-center sem-heading2">Second Semester</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -112,6 +113,9 @@
             </table>
         </div>
     </div>
+
+    <!-- Add space underneath container2 -->
+    <div class="spacer" style="height: 100px;"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -147,58 +151,32 @@
                 $('body').fadeTo(function () {
                     $(this).css('background-color', '#3e3636').fadeIn();
                 });
-                $('.coresub').fadeTo(function () {
+                $('.container-table').fadeTo(function () {
                     $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
                 });
 
-                $('.appsub').fadeTo(function () {
-                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                $('.table-bordered').fadeTo(function () {
+                    $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
                 });
 
-                $('.appsub h3, .appsub h4').fadeTo(function () {
-                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                $('.table-bordered').fadeTo(function () {
+                    $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
                 });
 
-                $('.specsub h3, .specsub h4').fadeTo(function () {
-                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
+                $('.sem-heading1').fadeTo(function () {
+                    $(this).css('color', 'white').fadeIn(); // Fade in container background color change
                 });
 
-                $('.specsub').fadeTo(function () {
-                    $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
-                });
-
-                $('.coresub h3, .coresub h4 ').fadeTo(function () {
-                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                });
-                $('.coresub1, .coresub2, .coresub3, .coresub4, .coresub5, .coresub6').fadeTo(function () {
-                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                });
-
-                $('.appsub1, .appsub2, .appsub3').fadeTo(function () {
-                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                });
-
-                $('.specsub1').fadeTo(function () {
-                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                });
-
-                $('.section1, .section2, .section3, .section4, .section5, .section6').fadeTo(function () {
-                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                });
-
-                $('.instructor1, .instructor2, .instructor3, .instructor4, .instructor5, .instructor6').fadeTo(function () {
-                    $(this).css('color', 'white').fadeIn(); // Fade in text color change
+                $('.sem-heading1 th').fadeTo(function () {
+                    $(this).css('background-color', '0e6cc4').fadeIn(); // Fade in container background color change
                 });
             } else {
                 $('body').removeClass('dark-mode');
                 $('body').fadeTo(function () {
                     $(this).css('background-color', '#0e6cc4').fadeIn();
                 });
-                $('.personaldet, .contactdet').fadeTo(function () {
+                $('.container-table').fadeTo(function () {
                     $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
-                });
-                $('.personaldet h3, .personaldet h4, .contactdet h3, .contactdet h4').fadeTo(function () {
-                    $(this).css('color', 'black').fadeIn(); // Fade in text color change
                 });
 
                 // Save the dark mode state even if it's turned off
