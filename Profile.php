@@ -1,3 +1,31 @@
+<?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Portal_Login.php"); // Redirect to the login page if not logged in
+    exit();
+}
+// Database connection
+include_once("connections/connection.php");
+$con = connection();
+
+// Retrieve user information
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM users WHERE id = '$user_id'";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+} else {
+    // Handle the case where the user is not found
+    echo "User not found.";
+    exit();
+}
+
+$con->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,12 +61,12 @@
                 <h4>Full Name</h4>
                 <div class="fullname-cont">
                     <div class="container mt-5"></div>
-                    <p>Juan A. Dela Cruz</p>
+                    <p><?php echo $user['firstName']." ".$user['middleInitial']." ".$user['lastName'];?></p>
                 </div>
                 <h4 style="top: 35%;">Birth Date</h4>
                 <div class="bday-cont">
                     <div class="container mt-5"></div>
-                    <p>01/01/1999</p>
+                    <p><?php echo $user['birth_date']?></p>
                 </div>
                 <h4 style="top: 51%; left: 7%;">Sex</h4>
                 <div class="seggs-cont">
@@ -48,12 +76,12 @@
                 <h4 style="top: 65%; left: 6%;">Religion</h4>
                 <div class="rel-cont">
                     <div class="container mt-5"></div>
-                    <p>Roman Catholic</p>
+                    <p><?php echo $user['Religion']?></p>
                 </div>
                 <h4 style="top: 78%; left: 5em;">Civil Status</h4>
                 <div class="civ-cont">
                     <div class="container mt-5"></div>
-                    <p>Single</p>
+                    <p><?php echo $user['Civil Status']?></p>
                 </div>
             </div>
         </div>
@@ -67,24 +95,24 @@
                 <h4 style="left: 7%;">Address</h4>
                 <div class="add-cont">
                     <div class="container mt-5"></div>
-                    <p>Blk 1 Lot 1 Mabuhay Homes, Imus, Cavite</p>
+                    <p><?php echo $user['Address']?></p>
                 </div>
                 <h4 style="top: 43%;">Guardian</h4>
                 <div class="guard-cont">
                     <div class="container mt-5"></div>
-                    <p>Pedro P. Penduko</p>
+                    <p><?php echo $user['Guardian']?></p>
                 </div>
                 <h4 style="top: 60%; left: 7%;">Contact Number</h4>
                 <div class="num-cont">
                     <div class="container mt-5"></div>
-                    <p>09123456789</p>
+                    <p><?php echo $user['Contact Number']?></p>
                 </div>
             </div>
         </div>
     </div>
 
     <!--SCHOOL LOGO-->
-    <a href="Student_Dash.html">
+    <a href="Student_Dash.php">
         <img src="img/school_logo.png" alt="Logo"
             style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
     </a>
