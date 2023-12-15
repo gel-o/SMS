@@ -15,6 +15,19 @@ html {
     padding: 0;
     background-color: #0e6cc4;
     overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.prof_portal {
+    position: absolute;
+    top: 122px;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    /* Change the text color */
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container-form,
@@ -26,7 +39,7 @@ html {
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     width: 30%;
-    height: 16em;
+    height: 12em;
     /* Set the width */
     border-radius: 15px;
     /* Rounded corners */
@@ -123,328 +136,47 @@ html {
     background-color: white;
 }
 
-.btn-primary {
-    background-color: #0A4D98;
-    /* Change to your desired color code */
-    transition: background-color 0.3s;
-    margin-bottom: -20px;
-}
-
-.btn-primary:hover {
-    background-color: #8BBDF5;
-    /* Change to your desired hover color code */
-}
-
-.stu_portal {
-    position: absolute;
-    top: 122px;
-    left: 28%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: black;
-    /* Change the text color */
-    z-index: 10;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.news {
-    top: 10px;
-    position: relative;
-}
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.menu-container {
-    position: relative;
-    top: 55%;
-    left: 18%;
-    height: 250px;
-    border-radius: 20px;
-    z-index: 10;
-    /* Adjust the z-index */
-    width: 64%;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    /* Shadow added */
-    background-color: white;
-    /* Background color added */
-    margin-bottom: -50px;
-    overflow: hidden;
-}
-
-/* Style the inner content as needed */
-.menu-container h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.menu-container p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-.profile-container:hover {
+.membutton:hover {
     background-color: #8BBDF5;
     /* Adjust hover color as desired */
 }
 
-.profile-container {
+.membutton {
     position: absolute;
-    width: 25%;
+    width: 42%;
     top: -2em;
-    right: 74%;
+    right: 55%;
     border-radius: 20px;
     background-color: #0A4D98;
     /* Adjust as needed */
     color: white;
     cursor: pointer;
-    padding: 10px;
+    padding: 11%;
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
 }
 
-.profile-container i {
+.membutton i {
     color: white;
     position: relative;
     font-size: 25px;
-    right: -43%;
+    right: -38%;
 }
 
-.profile-container h4 {
+.membutton h4 {
     color: white;
     font-weight: bold;
     font-size: medium;
     position: relative;
-    right: -37%;
+    right: -22%;
     top: 2px;
     margin-bottom: 0px;
 }
 
-.announcements-container:hover {
-    background-color: #8BBDF5;
-    /* Adjust hover color as desired */
-}
 
-.announcements-container {
-    position: absolute;
-    width: 25%;
-    top: -2em;
-    right: 38%;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #0A4D98;
-    /* Adjust as needed */
-    color: white;
-    cursor: pointer;
-    background-color: #0A4D98;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Additional styles as needed */
-}
 
-.announcements-container i {
-    color: white;
-    position: relative;
-    font-size: 25px;
-    right: -45%;
-    top: 0px;
-}
 
-.announcements-container h4 {
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    position: relative;
-    right: -1%;
-    top: 0px;
-    margin-bottom: -1px;
-    text-align: center;
-}
-
-.enrolledsub-container:hover {
-    background-color: #8BBDF5;
-    /* Adjust hover color as desired */
-}
-
-.enrolledsub-container {
-    position: absolute;
-    width: 25%;
-    top: -2em;
-    right: 1%;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #0A4D98;
-    /* Adjust as needed */
-    color: white;
-    cursor: pointer;
-    background-color: #0A4D98;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Additional styles as needed */
-}
-
-.enrolledsub-container i {
-    color: white;
-    position: relative;
-    font-size: 25px;
-    right: -105px;
-    top: 0px;
-}
-
-.enrolledsub-container h4 {
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    position: relative;
-    right: 5px;
-    top: 0px;
-    margin-bottom: -1px;
-    text-align: center;
-}
-
-.grades-container:hover {
-    background-color: #8BBDF5;
-    /* Adjust hover color as desired */
-}
-
-.grades-container {
-    position: absolute;
-    width: 25%;
-    top: 5em;
-    right: 74%;
-    border-radius: 20px;
-    background-color: #0A4D98;
-    /* Adjust as needed */
-    padding: 10px;
-    color: white;
-    cursor: pointer;
-    background-color: #0A4D98;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Additional styles as needed */
-}
-
-.grades-container i {
-    color: white;
-    position: relative;
-    font-size: 25px;
-    right: -42%;
-}
-
-.grades-container h4 {
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    position: relative;
-    right: -36%;
-    top: 2px;
-    margin-bottom: 0px;
-}
-
-.checklist-container:hover {
-    background-color: #8BBDF5;
-    /* Adjust hover color as desired */
-}
-
-.checklist-container {
-    position: absolute;
-    width: 25%;
-    top: 5em;
-    right: 38%;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #0A4D98;
-    /* Adjust as needed */
-    color: white;
-    cursor: pointer;
-    background-color: #0A4D98;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Additional styles as needed */
-}
-
-.checklist-container i {
-    color: white;
-    position: relative;
-    font-size: 25px;
-    right: -45%;
-    top: 0px;
-}
-
-.checklist-container h4 {
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    position: relative;
-    right: 5px;
-    top: 0px;
-    margin-bottom: -1px;
-    text-align: center;
-}
-
-.pref-container:hover {
-    background-color: #8BBDF5;
-    /* Adjust hover color as desired */
-}
-
-.pref-container {
-    position: absolute;
-    width: 25%;
-    top: 5em;
-    right: 1%;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #0A4D98;
-    /* Adjust as needed */
-    color: white;
-    cursor: pointer;
-    background-color: #0A4D98;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    /* Additional styles as needed */
-}
-
-.pref-container i {
-    color: white;
-    position: relative;
-    font-size: 25px;
-    right: -46%;
-    top: 0px;
-}
-
-.pref-container h4 {
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    position: relative;
-    right: -1%;
-    top: 0px;
-    margin-bottom: -1px;
-    text-align: center;
-}
-
-/* Custom CSS for adjusting modal size */
-#darkModeModal .modal-content {
-    height: 30vh;
-    /* Adjust the height as needed */
-}
-
-.dark-mode {
-    /* Update styles for dark mode here */
-    background-color: #333;
-    color: #fff;
-}
-
-.modal-footer {
-    min-height: 50px;
-    /* Set the minimum height */
-    padding: 10px;
-    /* Add padding for better spacing */
-}
 
 /*waves****************************/
 
