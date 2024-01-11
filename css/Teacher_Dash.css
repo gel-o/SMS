@@ -10,12 +10,11 @@
 
 body,
 html {
-    height: 100%;
+    height: 104%;
     margin: 0;
     padding: 0;
     background-color: #0e6cc4;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .prof_portal {
@@ -151,7 +150,7 @@ html {
     /* Adjust as needed */
     color: white;
     cursor: pointer;
-    padding: 11%;
+    padding: 47px;
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
@@ -174,17 +173,145 @@ html {
     margin-bottom: 0px;
 }
 
-.calendar {
+.annbutton:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.annbutton {
+    position: absolute;
+    width: 42%;
+    top: -2em;
+    right: 3%;
+    height: 2em;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 16%;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.annbutton i {
+    color: white;
     position: relative;
-    top: 15%;
-    left: 10%;
+    font-size: 25px;
+    right: -30%;
+    top: -20px;
+}
+
+.annbutton h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: -5%;
+    top: -18px;
+    text-align: center;
+}
+
+#calendar {
+    height: 300px;
+    /* Adjust the height as per your preference */
+    max-width: 100%;
+    /* Ensure the calendar is responsive within its container */
+    margin: 0 auto;
+    /* Center the calendar within its container */
+}
+
+.menucont {
+    position: absolute;
+    left: 18%;
+    top: 22em;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 50%;
-    z-index: 1;
-    padding: 2%;
-    height: 40%;
+    width: 30%;
+    height: 430px;
+    /* Match the height of the calendar */
     background-color: white;
+    /* Set the background color to white */
+    z-index: 1;
+    /* Move the white container behind the calendar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profcont:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.profcont {
+    position: absolute;
+    width: 42%;
+    top: -1em;
+    right: 51%;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 58px;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.profcont i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -33%;
+}
+
+.profcont h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: -17%;
+    top: 2px;
+    margin-bottom: 0px;
+}
+
+.subhandlecont:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.subhandlecont {
+    position: absolute;
+    width: 42%;
+    top: -1em;
+    right: 7%;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 15%;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.subhandlecont i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -38%;
+    top: -10px;
+}
+
+.subhandlecont h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: absolute;
+    right: 16%;
+    top: 86px;
+    margin-bottom: 0px;
 }
 
 /*waves****************************/
