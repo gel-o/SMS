@@ -7,6 +7,10 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="css/Teacher_Dash.css">
     <title>djprshs</title>
 </head>
@@ -25,6 +29,8 @@
         <div class='wave -two'></div>
         <div class='wave -three'></div>
     </div>
+
+
 
     <!--WELCOME (Ma'am/Sir Teacher Name) TEXT-->
     <div class="prof_portal">
@@ -68,7 +74,7 @@
         </div>
     </div>
 
-    <!--NEWS AND UPDATES CONTAINER-->
+    <!--MEMO AND ANNOUNCEMENT -->
     <div class="container-form-right" style="right: 18%;">
         <!-- Second container on the right side -->
         <div class="container mt-5">
@@ -76,7 +82,7 @@
                 <div class="col-md-12">
                     <div class="memocont">
                         <!-- PROFILE CONTAINER -->
-                        <a href="Profile.php">
+                        <a href="Memo_Teacher.html">
                             <div class="membutton" id="membutton">
                                 <i class="fa-solid fa-note-sticky"></i>
                                 <h4>Memo</h4>
@@ -88,6 +94,20 @@
         </div>
     </div>
 
+    <h2>
+        <center>Javascript Fullcalendar</center>
+    </h2>
+    <div class="container">
+        <div id="calendar"></div>
+    </div>
+    <br>
+
 </body>
+
+<script>
+    $(document).ready(function () {
+        $('#calendar').fullCalendar();
+    });
+</script>
 
 </html>
