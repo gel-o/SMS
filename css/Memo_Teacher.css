@@ -18,6 +18,59 @@ html {
     overflow-y: hidden;
 }
 
+.memo {
+    position: relative;
+    top: 15%;
+    left: 10%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    z-index: 1;
+    padding: 5%;
+    height: 40%;
+    background-color: white;
+}
+
+.memo h3 {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    font-size: 120%;
+}
+
+.memo h4 {
+    top: 20%;
+    font-size: 100%;
+    position: absolute;
+    right: 88%;
+    transform: translateX(-50%);
+}
+
+.memo-cont {
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    width: 96%;
+    border-style: solid;
+    border-color: #25a7d7;
+    background-color: #ded4d4;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.memo-cont h4 {
+    position: absolute;
+    font-size: medium;
+    left: 5%;
+    top: 30%;
+    white-space: nowrap;
+}
+
+.memo-cont p {
+    position: absolute;
+    white-space: nowrap;
+}
+
 /*waves****************************/
 
 

@@ -314,6 +314,84 @@ html {
     margin-bottom: 0px;
 }
 
+.gradescont:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.gradescont {
+    position: absolute;
+    width: 42%;
+    top: 185px;
+    right: 51%;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 15%;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.gradescont i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -30%;
+    top: -10px;
+}
+
+.gradescont h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: absolute;
+    right: 35%;
+    top: 86px;
+    margin-bottom: 0px;
+}
+
+.prefcont:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.prefcont {
+    position: absolute;
+    width: 42%;
+    top: 185px;
+    right: 7%;
+    border-radius: 20px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 15%;
+    background-color: #0A4D98;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Additional styles as needed */
+}
+
+.prefcont i {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: -30%;
+    top: -10px;
+}
+
+.prefcont h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: absolute;
+    right: 27%;
+    top: 86px;
+    margin-bottom: 0px;
+}
+
 /*waves****************************/
 
 

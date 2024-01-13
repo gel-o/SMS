@@ -9,6 +9,7 @@
         integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="css/Teacher_Dash.css">
@@ -162,19 +163,31 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <a href="Teacher_Profile.html">
-                        
                         <div class="profcont" id="profbutton">
                             <i class="fa-solid fa-user"></i>
                             <h4>Profile</h4>
                         </div>
-
-                        <a href="Subjects_Handled.html">
-                            <div class="subhandlecont">
-                                <i class="fa-solid fa-book"></i>
-                                <h4>Subjects Handled</h4>
-                            </div>
-                        </a>
                     </a>
+
+                    <a href="Subjects_Handled.html">
+                        <div class="subhandlecont">
+                            <i class="fa-solid fa-book"></i>
+                            <h4>Subjects Handled</h4>
+                        </div>
+                    </a>
+
+                    <a href="Input_Grades.html">
+                        <div class="gradescont" id="gradescont">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <h4>Grades</h4>
+                        </div>
+                    </a>
+
+                    <div class="prefcont" id="prefcont" data-toggle="modal" data-target="#preferencesModal">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <h4>Preferences</h4>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -186,12 +199,114 @@
     </div>
     <br>
 
+    <!-- Preferences Modal -->
+    <div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preferencesModalLabel">Preferences</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your preferences content here -->
+                    <p>Content of the preferences modal goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- You can add additional buttons if needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="announcementModal" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="announcementModalLabel">Announcement</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Announcement content will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <script>
+    // Function to update FullCalendar with the selected date and announcement text
+    function updateFullCalendar() {
+        // Retrieve values directly from window.localStorage
+        var selectedDate = window.localStorage.getItem('selectedDate');
+        var announcementText = window.localStorage.getItem('announcementText');
+
+        console.log('Updating FullCalendar with:', selectedDate, announcementText);
+
+        // Check if FullCalendar is initialized
+        if ($('#calendar').fullCalendar) {
+            // Set the end date as well to ensure the event is visible across different months or years
+            var endDate = moment(selectedDate).add(1, 'day').format('YYYY-MM-DD');
+
+            // Render the event with start and end properties
+            $('#calendar').fullCalendar('renderEvent', {
+                title: '!',
+                start: selectedDate,
+                end: endDate,
+                allDay: true,
+                color: 'blue',
+                className: 'clickable-event',
+                extendedProps: {
+                    announcementText: announcementText
+                }
+            });
+
+            // Update the lastAnnouncementText in localStorage
+            window.localStorage.setItem('lastAnnouncementText', announcementText);
+        } else {
+            console.error('FullCalendar not initialized.');
+        }
+    }
+
+    // Call updateFullCalendar on document ready
+    // Call updateFullCalendar on document ready
     $(document).ready(function () {
-        $('#calendar').fullCalendar();
+        // Initialize FullCalendar
+        $('#calendar').fullCalendar({
+            // your FullCalendar options here
+            eventClick: function (event) {
+                // Display the announcement in a modal
+                var announcementText = event.extendedProps.announcementText;
+
+                // If announcementText is not present in the event, check localStorage
+                if (!announcementText) {
+                    announcementText = window.localStorage.getItem('lastAnnouncementText');
+                }
+
+                // Create or update the modal content
+                $('#announcementModal .modal-body').html('<p>' + announcementText + '</p>');
+
+                // Show the modal
+                $('#announcementModal').modal('show');
+            }
+        });
+
+        // ... rest of your code
+
+        // Call updateFullCalendar on document ready
+        updateFullCalendar();
     });
+    
 </script>
 
 </html>

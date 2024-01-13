@@ -45,30 +45,62 @@ html {
     transform: translateX(-50%);
 }
 
-.anno-cont {
+.datecont {
     position: absolute;
-    top: 25%;
-    left: 2%;
-    width: 96%;
-    border-style: solid;
-    border-color: #25a7d7;
-    background-color: #ded4d4;
+    width: 30%;
+    top: 76px;
+    left: 41%;
     border-radius: 5px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 23px;
+    background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* Additional styles as needed */
 }
 
-.anno-cont h4 {
+.datecont h4 {
+    color: white;
+    font-weight:600;
     position: absolute;
-    font-size: medium;
-    left: 5%;
-    top: 30%;
-    white-space: nowrap;
+    left: 20%;
+    top: 25%;
+    text-wrap: nowrap;
 }
 
-.anno-cont p {
-    position: absolute;
-    white-space: nowrap;
+.confbutton:hover {
+    color: white !important;
+    background-color: #0A4D98;
 }
+
+.confbutton,
+.confbuton h4 {
+    position: absolute;
+    width: 10%;
+    top: 76px;
+    left: 87%;
+    border-radius: 5px;
+    border: 1px solid #0A4D98;
+    background-color: white;
+    /* Adjust as needed */
+    color: #0A4D98;
+    cursor: pointer;
+    padding: 23px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, color 0.3s;
+    /* Additional styles as needed */
+}
+
+.confbutton h4 {
+    font-weight:600;
+    position: absolute;
+    left: 26%;
+    top: 25%;
+    text-wrap: nowrap;
+}
+
 
 
 /*waves****************************/

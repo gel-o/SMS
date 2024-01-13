@@ -12,6 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha384-... (the integrity hash)" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/Add_Announcements.css">
     <title>djprshs</title>
 </head>
@@ -28,19 +30,92 @@
 
     <!-- ADD ANNOUNCEMENTS -->
     <div class="announcements">
-        <h3>Class Announcements</h3>
+        <h3 style="position: absolute; top: 8%;">Add class announcements</h3>
         <div class="container mt-5">
             <div class="row justify-content-center">
-                <div class="anno-cont">
-                    <div class="container mt-5"></div>
-                    <h4>No announcements yet</h4>
+                <div class="section-cont dropdown"
+                    style="background-color: #0A4D98; padding: 10px; top: 25%; left: 2%; width: 10%; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); position: absolute; height: 15%;">
+                    <a href="#" role="button" id="sectionDropdown" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span id="selectedSection"
+                            style="color: white; font-weight: 600; position: absolute; left: 20%;">Section</span> <i
+                            class="fa-solid fa-caret-down"
+                            style="color: white; position: absolute; left: 75%; top: 30%;"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="sectionDropdown">
+                        <a class="dropdown-item1" href="#" onclick="updateSection('11-Gulapa')"
+                            style="position: absolute; left: 24%;">11-Gulapa</a>
+                        <br>
+                        <a class="dropdown-item1" href="#" onclick="updateSection('Class 2')"
+                            style="position: absolute; left: 33%;">Class 2</a>
+                        <br>
+                        <a class="dropdown-item1" href="#" onclick="updateSection('Class 3')"
+                            style="position: absolute; left: 33%;">Class 3</a>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="anno-cont dropdown"
+                    style="background-color: #0A4D98; padding: 10px; top: 25%; left: 14%; width: 25%; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); position: absolute; height: 15%;">
+                    <a href="#" role="button" id="sectionDropdown" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <span id="selectedAnno"
+                            style="color: white; font-weight: 600; position: absolute; left: 18%;">Announcement
+                            Type</span> <i class="fa-solid fa-caret-down"
+                            style="color: white; position: absolute; left: 90%; top: 30%;"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="annoDropdown">
+                        <a class="dropdown-item2" href="#" onclick="updateSection('Class 1')">Quiz Announcement</a>
+                        <br>
+                        <a class="dropdown-item2" href="#" onclick="updateSection('Class 2')">No Classes
+                            Announcement</a>
+                        <br>
+                        <a class="dropdown-item2" href="#" onclick="updateSection('Class 3')">Event Announcement</a>
+                    </div>
+                </div>
+
+                <div class="datecont" id="datecont" data-toggle="modal" data-target="#dateModal">
+                    <h4>Select Announcement Date</h4>
+                </div>
+
+                <a href="Teacher_Dash.html">
+                    <div class="confbutton" id="confbutton">
+                        <h4>Confirm</h4>
+                    </div>
+                </a>
+
+                <input type="text" id="textBox" placeholder="Add announcement here"
+                    style="width: 96%; margin-top: 18px; position: absolute; left: 2%; height: 45%; border-radius: 5px; border: solid #0A4D98; text-align: left; padding: 7px;">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="dateModal" tabindex="-1" role="dialog" aria-labelledby="dateModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dateModalLabel">Select Announcement Date</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your date picker or any other content related to selecting the date here -->
+                    <input type="date" id="announcementDate" name="announcementDate" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="saveAnnouncementDate()">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!--SCHOOL LOGO-->
-    <a href="Student_Dash.html">
+    <a href="Teacher_Dash.html">
         <img src="img/school_logo.png" alt="Logo"
             style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
     </a>
@@ -49,52 +124,62 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
-            function applyDarkModeStyles() {
-                let storedDarkMode = localStorage.getItem('darkMode');
+        // Store the announcement text in localStorage and update FullCalendar
+        function saveAnnouncementDate() {
+            var selectedDate = $('#announcementDate').val();
+            var announcementText = $('#textBox').val();
 
-                // Apply your dark mode changes similar to the ones within your toggle function
-                // For example:
-                if (storedDarkMode === 'true') {
-                    $('body').addClass('dark-mode');
-                    $('body').fadeTo(function () {
-                        $(this).css('background-color', '#3e3636').fadeIn();
-                    });
-                    $('.announcements').fadeTo(function () {
-                        $(this).css('background-color', '#5d5555').fadeIn(); // Fade in container background color change
-                    });
-                    $('.announcements h4, .announcements h3').fadeTo(function () {
-                        $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                    });
-                    $('.anno-cont').fadeTo(function () {
-                        $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in text color change
-                    });
-                    $('.anno-cont h4, .anno-cont p').fadeTo(function () {
-                        $(this).css('color', 'white').fadeIn(); // Fade in text color change
-                    });
-                } else {
-                    $('body').removeClass('dark-mode');
-                    $('body').fadeTo(function () {
-                        $(this).css('background-color', '#2962FF').fadeIn();
-                    });
-                    $('.announcements').fadeTo(function () {
-                        $(this).css('background-color', 'white').fadeIn(); // Fade in container background color change
-                    });
-                    $('.announcements h4').fadeTo(function () {
-                        $(this).css('color', 'black').fadeIn(); // Fade in text color change
-                    });
-                    $('.anno-cont').fadeTo(function () {
-                        $(this).css('background-color', '#ded4d4').fadeIn(); // Fade in text color change
-                    });
-                    $('.anno-cont h4, .anno-cont p').fadeTo(function () {
-                        $(this).css('color', 'black').fadeIn(); // Fade in text color change
-                    });
-                }
+            // Use window.localStorage directly
+            window.localStorage.setItem('selectedDate', selectedDate);
+            window.localStorage.setItem('announcementText', announcementText);
+
+            // Log the values to the console for debugging
+            console.log("Selected Date: ", selectedDate);
+            console.log("Announcement Text: ", announcementText);
+
+            // Update the "Select Announcement Date" text
+            $('#datecont h4').text('Selected Date: ' + selectedDate);
+
+            // Update FullCalendar in Teacher_Dash.html
+            updateFullCalendar(selectedDate, announcementText);
+
+            // Manually close the modal by triggering the close button
+            $('#dateModal').modal('hide');
+            console.log("Modal Closed");
+        }
+
+        // Function to update FullCalendar in the parent window
+        function updateFullCalendar(selectedDate, announcementText) {
+            // Check if the opener window and updateFullCalendar function exist
+            if (window.opener && window.opener.updateFullCalendar) {
+                // Call the updateFullCalendar function in the parent window
+                window.opener.updateFullCalendar(selectedDate, announcementText);
             }
+        }
 
-            // Apply dark mode styles based on storedDarkMode
-            applyDarkModeStyles();
+    </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-item1').click(function (e) {
+                e.preventDefault();
+                var selectedSection = $(this).text();
+                $('#selectedSection').text(selectedSection);
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-item2').click(function (e) {
+                e.preventDefault();
+                var selectedAnno = $(this).text();
+                $('#selectedAnno').text(selectedAnno);
+            });
         });
     </script>
 
