@@ -79,8 +79,13 @@
                 </div>
 
                 <a href="Teacher_Dash.html">
+<<<<<<< Updated upstream
                     <div class="confbutton" id="confbutton">
                         <h4 onclick="saveAnnouncementText()">Confirm</h4>
+=======
+                    <div class="confbutton" id="confbutton" onclick="saveAnnouncementText()">
+                        <h4>Confirm</h4>
+>>>>>>> Stashed changes
                     </div>
                 </a>
 
@@ -126,11 +131,22 @@
 
     <script>
         function saveAnnouncementDate() {
+<<<<<<< Updated upstream
             // Get the selected date
             var selectedDate = $('#selectedDate').val();
 
             // Save the selected date in localStorage
             localStorage.setItem('selectedDate', selectedDate);
+=======
+            // Get the selected date from the date picker
+            var selectedDate = $('#selectedDate').val();
+
+            // Store the selected date in localStorage
+            localStorage.setItem('selectedDate', selectedDate);
+
+            // Optionally, display a confirmation message
+            alert('Date saved successfully!');
+>>>>>>> Stashed changes
         }
 
         function saveAnnouncementText() {
@@ -146,7 +162,11 @@
 
             // Add the new event to the array
             var newEvent = {
+<<<<<<< Updated upstream
                 title: 'NEW!!!',
+=======
+                title: 'NEW!',
+>>>>>>> Stashed changes
                 start: selectedDate,  // Use the stored date
                 announcementText: announcementText,
             };
@@ -155,9 +175,18 @@
             // Save the updated events array in localStorage
             localStorage.setItem('eventsArray', JSON.stringify(eventsArray));
 
+<<<<<<< Updated upstream
             // Display a confirmation message
             alert('Announcement saved successfully!');
 
+=======
+            // Optionally, you can display a confirmation message
+            alert('Announcement saved successfully!');
+
+            // Trigger the updateFullCalendar function in Teacher_Dash.html
+            window.opener.updateFullCalendar(eventsArray);
+
+>>>>>>> Stashed changes
             // Close the modal
             $('#dateModal').modal('hide');
         }
