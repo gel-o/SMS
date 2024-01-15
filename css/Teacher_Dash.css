@@ -392,6 +392,10 @@ html {
     margin-bottom: 0px;
 }
 
+.fc-time {
+    display: none;
+}
+
 /*waves****************************/
 
 

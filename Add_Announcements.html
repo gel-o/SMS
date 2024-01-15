@@ -80,7 +80,7 @@
 
                 <a href="Teacher_Dash.html">
                     <div class="confbutton" id="confbutton">
-                        <h4>Confirm</h4>
+                        <h4 onclick="saveAnnouncementText()">Confirm</h4>
                     </div>
                 </a>
 
@@ -104,11 +104,12 @@
                 </div>
                 <div class="modal-body">
                     <!-- Add your date picker or any other content related to selecting the date here -->
-                    <input type="date" id="announcementDate" name="announcementDate" class="form-control">
+                    <input type="date" id="selectedDate" name="selectedDate" class="form-control" required>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        onclick="saveAnnouncementDate()">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!-- Remove data-dismiss attribute to prevent automatic closing of the modal -->
+                    <button type="button" class="btn btn-primary" onclick="saveAnnouncementDate()">Save Date</button>
                 </div>
             </div>
         </div>
@@ -124,39 +125,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Store the announcement text in localStorage and update FullCalendar
         function saveAnnouncementDate() {
-            var selectedDate = $('#announcementDate').val();
+            // Get the selected date
+            var selectedDate = $('#selectedDate').val();
+
+            // Save the selected date in localStorage
+            localStorage.setItem('selectedDate', selectedDate);
+        }
+
+        function saveAnnouncementText() {
+            // Get the announcement text from the text box
             var announcementText = $('#textBox').val();
 
-            // Use window.localStorage directly
-            window.localStorage.setItem('selectedDate', selectedDate);
-            window.localStorage.setItem('announcementText', announcementText);
+            // Get the selected date from localStorage
+            var selectedDate = localStorage.getItem('selectedDate');
 
-            // Log the values to the console for debugging
-            console.log("Selected Date: ", selectedDate);
-            console.log("Announcement Text: ", announcementText);
+            // Load existing events from localStorage
+            var storedEvents = localStorage.getItem('eventsArray');
+            var eventsArray = storedEvents ? JSON.parse(storedEvents) : [];
 
-            // Update the "Select Announcement Date" text
-            $('#datecont h4').text('Selected Date: ' + selectedDate);
+            // Add the new event to the array
+            var newEvent = {
+                title: 'NEW!!!',
+                start: selectedDate,  // Use the stored date
+                announcementText: announcementText,
+            };
+            eventsArray.push(newEvent);
 
-            // Update FullCalendar in Teacher_Dash.html
-            updateFullCalendar(selectedDate, announcementText);
+            // Save the updated events array in localStorage
+            localStorage.setItem('eventsArray', JSON.stringify(eventsArray));
 
-            // Manually close the modal by triggering the close button
+            // Display a confirmation message
+            alert('Announcement saved successfully!');
+
+            // Close the modal
             $('#dateModal').modal('hide');
-            console.log("Modal Closed");
         }
-
-        // Function to update FullCalendar in the parent window
-        function updateFullCalendar(selectedDate, announcementText) {
-            // Check if the opener window and updateFullCalendar function exist
-            if (window.opener && window.opener.updateFullCalendar) {
-                // Call the updateFullCalendar function in the parent window
-                window.opener.updateFullCalendar(selectedDate, announcementText);
-            }
-        }
-
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

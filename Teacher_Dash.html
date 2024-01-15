@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="css/Teacher_Dash.css">
     <style>
@@ -66,7 +66,7 @@
             color: white;
         }
     </style>
-    <title>DJPRSHS</title>
+    <title>djprshs</title>
 </head>
 
 <body>
@@ -242,71 +242,73 @@
         </div>
     </div>
 
+    <!-- Announcement Modal -->
+    <div class="modal fade" id="announcementModal" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="announcementModalLabel">Announcement</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="announcementModalBody">
+                    <!-- Announcement content will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <script>
-    // Function to update FullCalendar with the selected date and announcement text
-    function updateFullCalendar() {
-        // Retrieve values directly from window.localStorage
-        var selectedDate = window.localStorage.getItem('selectedDate');
-        var announcementText = window.localStorage.getItem('announcementText');
-
-        console.log('Updating FullCalendar with:', selectedDate, announcementText);
-
-        // Check if FullCalendar is initialized
+    function updateFullCalendar(eventsArray) {
         if ($('#calendar').fullCalendar) {
-            // Set the end date as well to ensure the event is visible across different months or years
-            var endDate = moment(selectedDate).add(1, 'day').format('YYYY-MM-DD');
+            // Clear existing events
+            $('#calendar').fullCalendar('removeEvents');
 
-            // Render the event with start and end properties
-            $('#calendar').fullCalendar('renderEvent', {
-                title: '!',
-                start: selectedDate,
-                end: endDate,
-                allDay: true,
-                color: 'blue',
-                className: 'clickable-event',
-                extendedProps: {
-                    announcementText: announcementText
-                }
+            // Parse the date using moment
+            eventsArray.forEach(function (event) {
+                event.start = moment(event.start).toDate();
             });
 
-            // Update the lastAnnouncementText in localStorage
-            window.localStorage.setItem('lastAnnouncementText', announcementText);
+            // Render events from the array
+            $('#calendar').fullCalendar('renderEvents', eventsArray, true);
         } else {
             console.error('FullCalendar not initialized.');
         }
     }
 
-    // Call updateFullCalendar on document ready
-    // Call updateFullCalendar on document ready
     $(document).ready(function () {
-        // Initialize FullCalendar
         $('#calendar').fullCalendar({
             // your FullCalendar options here
             eventClick: function (event) {
-                // Display the announcement in a modal
                 var announcementText = event.extendedProps.announcementText;
-
-                // If announcementText is not present in the event, check localStorage
                 if (!announcementText) {
                     announcementText = window.localStorage.getItem('lastAnnouncementText');
                 }
-
-                // Create or update the modal content
-                $('#announcementModal .modal-body').html('<p>' + announcementText + '</p>');
-
-                // Show the modal
+                $('#announcementModalBody').html('<p>' + announcementText + '</p>');
                 $('#announcementModal').modal('show');
+            },
+            viewRender: function (view, element) {
+                // Get the currently displayed date
+                var currentDate = $('#calendar').fullCalendar('getDate');
+
+                // Load events from localStorage
+                var storedEvents = localStorage.getItem('eventsArray');
+                if (storedEvents) {
+                    var eventsArray = JSON.parse(storedEvents);
+                    updateFullCalendar(eventsArray);
+                }
             }
         });
-
-        // ... rest of your code
-
-        // Call updateFullCalendar on document ready
-        updateFullCalendar();
     });
-    
+</script>
+
 </script>
 
 </html>
