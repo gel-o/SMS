@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Student List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Student_List.css">
+    <style>
+        /* Add any additional styling here */
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Container behind the existing container */
+        .outer-container {
+            position: absolute;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            top: 15%;
+            left: 10%;
+            /* Adjust padding as needed */
+            margin-top: 20px;
+            z-index: 11;
+        }
+
+        /* Adjust the styling of the search input */
+        #searchInput {
+            width: calc(100% - 100px);
+            /* Adjust the width as needed */
+            margin-right: 0;
+        }
+
+        .search-group {
+            position: relative;
+            width: 75%;
+            top: 45%;
+            left: 25%;
+        }
+
+        .search-group button {
+            position: absolute;
+            right: 1;
+            top: 10;
+            /* Adjust the top as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--SCHOOL LOGO-->
+    <a href="Teacher_Dash.html">
+        <img src="img/school_logo.png" alt="Logo"
+            style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
+    </a>
+
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
+    <div class="outer-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="perPageDropdown">Display per page:</label>
+                    <select class="form-control" id="perPageDropdown" onchange="onPerPageChange()">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="search-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search by name">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button"
+                                    onclick="search()">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>Student Number</th>
+                        <th>Student Name</th>
+                        <th>Section</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentList">
+                    <!-- Student data will be dynamically added here -->
+                </tbody>
+            </table>
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="previousPage()" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" onclick="nextPage()" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // Sample student data (replace with your actual data)
+        const students = Array.from({ length: 100 }, (_, index) => ({
+            studentNumber: index + 1,
+            studentName: `Student ${index + 1}`,
+            section: `Section ${index % 5 + 1}`,
+        }));
+
+        let currentPage = 1;
+        let studentsPerPage = 10;
+
+        // Function to display students based on current page and students per page
+        function displayStudents() {
+            const startIndex = (currentPage - 1) * studentsPerPage;
+            const endIndex = startIndex + studentsPerPage;
+            const currentStudents = students.slice(startIndex, endIndex);
+
+            const studentListElement = document.getElementById('studentList');
+            studentListElement.innerHTML = '';
+
+            currentStudents.forEach(student => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+        <td>${student.studentNumber}</td>
+        <td>${student.studentName}</td>
+        <td>${student.section}</td>
+        <td><button class="btn btn-primary" onclick="grade(${student.studentNumber})">Grade</button></td>
+      `;
+                studentListElement.appendChild(row);
+            });
+        }
+
+        // Function to update the displayed students on page load
+        function updateDisplay() {
+            displayStudents();
+        }
+
+        // Function to handle next page button click
+        function nextPage() {
+            const totalPages = Math.ceil(students.length / studentsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayStudents();
+            }
+        }
+
+        // Function to handle previous page button click
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayStudents();
+            }
+        }
+
+        // Function to handle changes in the number of students per page
+        function onPerPageChange() {
+            studentsPerPage = parseInt(document.getElementById('perPageDropdown').value, 10);
+            currentPage = 1;
+
+            // Dynamically adjust the height based on the selected value
+            const htmlStyle = document.documentElement.style;
+            const bodyStyle = document.body.style;
+
+            switch (studentsPerPage) {
+                case 10:
+                    htmlStyle.height = '120%';
+                    bodyStyle.height = '120%';
+                    break;
+                case 20:
+                    htmlStyle.height = '150%';
+                    bodyStyle.height = '150%';
+                    break;
+                case 50:
+                    htmlStyle.height = '218%';
+                    bodyStyle.height = '218%';
+                    break;
+                // Add more cases if needed
+                default:
+                    htmlStyle.height = '120%';
+                    bodyStyle.height = '120%';
+                    break;
+            }
+
+            // Update the display
+            updateDisplay();
+        }
+
+        // Initial display on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Update the display when the page loads
+            updateDisplay();
+
+            // Add an event listener for the per page dropdown change
+            document.getElementById('perPageDropdown').addEventListener('change', onPerPageChange);
+        });
+
+        // Function to handle search button click
+        function search() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredStudents = students.filter(student => student.studentName.toLowerCase().includes(searchInput));
+            currentPage = 1;
+            studentsPerPage = parseInt(document.getElementById('perPageDropdown').value, 10);
+            students.length = 0;
+            students.push(...filteredStudents);
+            displayStudents();
+        }
+
+        // Function to handle grade button click and redirect to Input_Grades.html
+        function grade(studentNumber) {
+            // Redirect to Input_Grades.html
+            window.location.href = 'Input_Grades.html';
+        }
+
+        // Initial display on page load
+        document.addEventListener('DOMContentLoaded', updateDisplay);
+    </script>
+
+</body>
+
+</html>
