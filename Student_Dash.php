@@ -50,7 +50,7 @@ $con->close();
     <!--WELCOME (STUDENT NAME) TEXT-->
     <div class="stu_portal">
         <i class="fa-solid fa-school"
-            style="font-size: 25px; position: relative; top: -1em; right: 5em; color: white;"></i>
+            style="font-size: 25px; position: relative; top: -1em; right: 160px; color: white;"></i>
         <h2 style="font-weight: bold; position: absolute; right: 5em; top: -1em; font-size: 140%; color: white;">
             Welcome, <?php echo $user['firstName'];?>!</h2>
         <div class="linerist6"></div>
