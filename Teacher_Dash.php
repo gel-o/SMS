@@ -1,3 +1,31 @@
+<?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: Portal_Login.php"); // Redirect to the login page if not logged in
+    exit();
+}
+// Database connection
+include_once("connections/connection.php");
+$con = connection();
+
+// Retrieve user information
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT * FROM users WHERE id = '$user_id'";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+} else {
+    // Handle the case where the user is not found
+    echo "User not found.";
+    exit();
+}
+
+$con->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,9 +117,9 @@
     <!--WELCOME (Ma'am/Sir Teacher Name) TEXT-->
     <div class="prof_portal">
         <i class="fa-solid fa-school"
-            style="font-size: 25px; position: relative; top: -1em; right: 5em; color: white;"></i>
-        <h2 style="font-weight: bold; position: absolute; right: 5em; top: -1em; font-size: 140%; color: white;">
-            Welcome, </h2>
+            style="font-size: 25px; position: absolute; top: -1em; right: 270px; color: white;"></i>
+        <h2 style="font-weight: bold; position: relative; left: 1em; top: -1em; font-size: 140%; color: white;">
+            Welcome, Teacher <?php echo $user['firstName'];?>!</h2>
         <div class="linerist6"></div>
         <h4 style="font-size: 80%; position: relative; right: 2em; top: -2em; color: white;">Last Login: November 22,
             2023 10:35:20
@@ -194,7 +222,7 @@
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <a href="Teacher_Profile.html">
+                    <a href="Teacher_Profile.php">
                         <div class="profcont" id="profbutton">
                             <i class="fa-solid fa-user"></i>
                             <h4>Profile</h4>

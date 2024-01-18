@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: Registrar_Dash.html");
                 break;
             case 'teacher':
-                header("Location: Teacher_Dash.html");
+                header("Location: Teacher_Dash.php");
                 break;
             case 'student':
                 header("Location: Student_Dash.php");

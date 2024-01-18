@@ -126,7 +126,7 @@ $con->close();
     </div>
 
     <!--SCHOOL LOGO-->
-    <a href="Student_Dash.php">
+    <a href="Teacher_Dash.php">
         <img src="img/school_logo.png" alt="Logo"
             style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
     </a>
