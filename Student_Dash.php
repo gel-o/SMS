@@ -59,6 +59,39 @@ $con->close();
             am <a style="color: pink;" href="logout.php">LOGOUT</a></h4>
         
     </div>
+
+    <!-- LOGOUT BUTTON -->
+    <a href="#" id="logoutBtn" style="position: absolute; top: 20px; right: 20px; color: white; text-decoration: none;">
+        <i class="fa-solid fa-power-off" style="font-size: 25px;"></i>
+    </a>
+
+    <!-- LOGOUT CONFIRMATION MODAL -->
+    <div class="modal" id="logoutConfirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Logout Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        style="position: absolute; left: 65%;">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmLogoutBtn">Logout</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- DETAILS CONTAINER -->
     <div class="container-form">
         <div class="container mt-5">
@@ -543,5 +576,25 @@ $con->close();
 
     </script>
 </body>
+
+<!-- LOGOUT FUNCTION -->
+<script>
+    $(document).ready(function () {
+        // Logout button click event
+        $('#logoutBtn').click(function (e) {
+            // Prevent the default action of the anchor tag
+            e.preventDefault();
+            // Show the logout confirmation modal
+            $('#logoutConfirmModal').modal('show');
+        });
+
+        // Confirm Logout button click event
+        $('#confirmLogoutBtn').click(function () {
+            // Add logic to perform logout actions (e.g., redirect to login page, clear session, etc.)
+            // For demonstration purposes, let's assume redirecting to the login page:
+            window.location.href = 'New_Portal_Login.html';
+        });
+    });
+</script>
 
 </html>

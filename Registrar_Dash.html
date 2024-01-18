@@ -12,73 +12,127 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-    <link rel="stylesheet" href="css/Teacher_Dash.css">
-    <style>
-        #calendar-container {
-            position: absolute;
-            max-width: 25%;
-            /* Adjust the width as needed */
-            margin: 0 auto;
-            /* Center the container horizontally */
-            left: 54%;
-            top: 48%;
-        }
-
-        #calendar {
-            position: absolute;
-            width: 100%;
-            height: 300px;
-            /* Adjust the height as per your preference */
-            max-width: 100%;
-            /* Ensure the calendar is responsive within its container */
-            margin: 0 auto;
-            /* Center the calendar within its container */
-        }
-
-        #white-container {
-            position: absolute;
-            left: -8%;
-            top: -1em;
-            border-radius: 15px;
-            width: 122%;
-            height: 430px;
-            /* Match the height of the calendar */
-            background-color: white;
-            /* Set the background color to white */
-            z-index: 0;
-            /* Move the white container behind the calendar */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .fc-toolbar h2 {
-            position: absolute;
-            top: 2%;
-            font-size: 130%;
-        }
-
-        .fc-toolbar h2,
-        .fc-day-number {
-            color: #0A4D98;
-        }
-
-        .fc-day-header {
-            background-color: #0A4D98;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/Registrar_Dash.css">
     <title>DJPRSHS Registrar</title>
 </head>
+
 <body>
     <a href="Registrar_Dash.html">
         <img src="img/school_logo.png" alt="Logo"
             style="position: fixed; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
     </a>
 
-        <!-- bg -->
-        <div class='box'>
-            <div class='wave -one'></div>
-            <div class='wave -two'></div>
-            <div class='wave -three'></div>
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
+    <!--WELCOME (Ma'am/Sir Teacher Name) TEXT-->
+    <div class="reg_portal">
+        <i class="fa-solid fa-school"
+            style="font-size: 25px; position: absolute; top: -1em; right: 245px; color: white;"></i>
+        <h2 style="font-weight: bold; position: relative; left: -2em; top: -1em; font-size: 140%; color: white;">
+            Welcome,
+        </h2>
+        <div class="linerist6"></div>
+        <h4 style="font-size: 80%; position: relative; right: 2em; top: -2em; color: white;">Last Login: November 22,
+            2023 10:35:20
+            am</h4>
+
+    </div>
+
+    <!-- LOGOUT BUTTON -->
+    <a href="#" id="logoutBtn" style="position: absolute; top: 20px; right: 20px; color: white; text-decoration: none;">
+        <i class="fa-solid fa-power-off" style="font-size: 25px;"></i>
+    </a>
+
+    <!-- LOGOUT CONFIRMATION MODAL -->
+    <div class="modal" id="logoutConfirmModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Logout Confirmation</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        style="position: absolute; left: 65%;">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmLogoutBtn">Logout</button>
+                </div>
+
+            </div>
         </div>
+    </div>
+
+    <!-- DETAILS CONTAINER -->
+    <div class="container-form">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <!-- PROFILE CONTAINER -->
+                    <a href="Student_Records.html">
+                        <div class="stu-rec" id="recbutton">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <h4>Student Records</h4>
+                        </div>
+                        <hr
+                            style="position: relative; top: 30%; background-color: #0A4D98; border-radius: 5px; height: 4%; left: -2%; width: 104%;">
+                    </a>
+                    <h6 style="position: absolute; left: 43%; text-align: center; top: -100%;">View, input, or edit <br>
+                        student records on the go</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--NEWS AND UPDATES CONTAINER-->
+    <div class="container-form-right" style="right: 18%;">
+        <!-- Second container on the right side -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <i class="fa-solid fa-note-sticky"
+                        style="position: relative; top: -42px; font-size: 25px; left: 3px;"></i>
+                    <h3 style="font-size: larger; position: relative; left: 38px; top: -67px;">Notes from Principal</h3>
+                    <div class="linerist"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
+
+<!-- LOGOUT FUNCTION -->
+<script>
+    $(document).ready(function () {
+        // Logout button click event
+        $('#logoutBtn').click(function (e) {
+            // Prevent the default action of the anchor tag
+            e.preventDefault();
+            // Show the logout confirmation modal
+            $('#logoutConfirmModal').modal('show');
+        });
+
+        // Confirm Logout button click event
+        $('#confirmLogoutBtn').click(function () {
+            // Add logic to perform logout actions (e.g., redirect to login page, clear session, etc.)
+            // For demonstration purposes, let's assume redirecting to the login page:
+            window.location.href = 'New_Portal_Login.html';
+        });
+    });
+</script>
+
 </html>
