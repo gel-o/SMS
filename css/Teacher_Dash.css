@@ -17,6 +17,12 @@ html {
     overflow-x: hidden;
 }
 
+.dark-mode {
+    /* Update styles for dark mode here */
+    background-color: #333;
+    color: #fff;
+}
+
 .prof_portal {
     position: absolute;
     top: 122px;

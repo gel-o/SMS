@@ -122,7 +122,8 @@
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        style="position: absolute; left: 65%;">Cancel</button>
                     <button type="button" class="btn btn-primary" id="confirmLogoutBtn">Logout</button>
                 </div>
 
@@ -235,40 +236,59 @@
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="preferencesModalLabel">Preferences</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h4 class="modal-title">Preferences</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
-                    <!-- Add your preferences content here -->
-                    <p>Content of the preferences modal goes here.</p>
+
+                <!-- Modal Body -->
+                <div class="modal-body" style="height: 5em;">
+                    <label for="darkModeToggle" style="top: 40%; position: absolute;">Dark Mode:</label>
+                    <input type="checkbox" id="darkModeToggle" style="position: absolute; left: 21%; top: 46%;">
                 </div>
+
+                <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <!-- You can add additional buttons if needed -->
+                    <button type="button" class="btn btn-primary" id="changePasswordBtn"
+                        style="position: absolute; left: 2%; top: 74%;">Change Password</button>
+                    <button type="button" class="btn btn-primary" id="saveChangesBtn" data-dismiss="modal">Save
+                        Changes</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="announcementModal" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <!-- CHANGE PASSWORD MODAL -->
+    <div class="modal" id="changePasswordModal" style="max-height: 60%;">
+        <div class="modal-dialog">
             <div class="modal-content">
+
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="announcementModalLabel">Announcement</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h4 class="modal-title">Change Password</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+
+                <!-- Modal Body -->
                 <div class="modal-body">
-                    <!-- Announcement content will be dynamically inserted here -->
+                    <div>
+                        <label for="currentPassword">Enter current password:</label>
+                        <input type="password" id="currentPassword" style="left: 40%; position: absolute;">
+                    </div>
+                    <div>
+                        <label for="newPassword">Enter new password:</label>
+                        <input type="password" id="newPassword" style="left: 40%; position: absolute;">
+                    </div>
                 </div>
+
+                <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="savePasswordBtn" data-dismiss="modal"
+                        style="position: relative; top: 78%;">Save
+                        Password</button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -338,6 +358,253 @@
             }
         });
     });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#changePasswordBtn').click(function () {
+            $('#preferencesModal').modal('hide'); // Hide Preferences modal
+            $('#changePasswordModal').modal('show'); // Show Change Password modal
+        });
+
+        $('#changePasswordModal').on('hidden.bs.modal', function () {
+            $('#preferencesModal').modal('show'); // Show Preferences modal when Change Password modal is closed
+        });
+
+        $('#savePasswordBtn').click(function () {
+            // Add logic here to save the new password
+            let currentPassword = $('#currentPassword').val();
+            let newPassword = $('#newPassword').val();
+
+            // Logic to update password goes here
+            console.log("Current Password:", currentPassword);
+            console.log("New Password:", newPassword);
+
+            // Close the Change Password modal after saving
+            $('#changePasswordModal').modal('hide');
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        let isDarkModeToggled = false;
+        const storedDarkMode = localStorage.getItem('darkMode');
+
+        // Event listener for the Preferences button
+        $('.pref-container').on('click', function () {
+            $('#preferencesModal').modal('show'); // Show the modal on button click
+        });
+
+        // Function to save dark mode state to localStorage
+        function saveDarkModeState(isDarkModeOn) {
+            localStorage.setItem('darkMode', isDarkModeOn);
+        }
+
+        // Event listener for the dark mode toggle
+        $('#darkModeToggle').change(function () {
+            isDarkModeToggled = true;
+            saveDarkModeState($('#darkModeToggle').is(':checked')); // Save state to localStorage
+        });
+
+        // Dark mode toggle functionality
+        $('#darkModeToggle').change(function () {
+            isDarkModeToggled = true; // Update the flag when dark mode is toggled
+            saveDarkModeState($('#darkModeToggle').is(':checked')); // Save state to localStorage
+        });
+
+        // Save Changes button click
+        $('#saveChangesBtn').click(function () {
+            if (isDarkModeToggled) {
+                // Apply changes only if dark mode is toggled
+                if ($('#darkModeToggle').is(':checked')) {
+                    $('body').addClass('dark-mode');
+                    $('.fa-solid.fa-school').fadeTo(function () {
+                        $(this).css('color', 'white').fadeIn(); // Fade in icon color change
+                    });
+                    $('.container-form h3, .container-form h4, .container-form i').fadeTo(function () {
+                        $(this).css('color', 'black').fadeIn(); // Fade in icon color change
+                    });
+                    $('#preferencesModal .modal-content').fadeTo(function () {
+                        $(this).css('background-color', '#5d5555').fadeIn(); // Fade in modal background color change
+                    });
+                    $('.logout-modal .modal-content').fadeTo(function () {
+                        $(this).css('background-color', '#5d5555').fadeIn(); // Fade in modal background color change
+                    });
+                    $('.linerist').fadeTo(function () {
+                        $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist4').fadeTo(function () {
+                        $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist6').fadeTo(function () {
+                        $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
+                    });
+                } else {
+                    $('body').removeClass('dark-mode');
+                    $('rect').fadeTo(function () {
+                        $(this).css('fill', 'white').fadeIn(); // Fade in the color change
+                    });
+                    $('.fa-solid.fa-school').fadeTo(function () {
+                        $(this).css('color', 'white').fadeIn(); // Fade in icon color change
+                    });
+                    $('.container-form h3, .container-form h4, .container-form i').fadeTo(function () {
+                        $(this).css('color', 'black').fadeIn(); // Fade in icon color change
+                    });
+                    $('#preferencesModal .modal-content').fadeTo(function () {
+                        $(this).css('background-color', 'white').fadeIn(); // Fade in modal background color change
+                    });
+                    $('.profcont').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in profile container color change
+                    });
+                    $('.subhandlecont').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in announcements container color change
+                    });
+                    $('.gradescont').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in enrolledsubs container color change
+                    });
+                    $('.prefcont').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.membutton').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.annbutton').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+
+                    $('.linerist').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist2').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist3').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist4').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist5').fadeTo(function () {
+                        $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+                    });
+                    $('.linerist6').fadeTo(function () {
+                        $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
+                    });
+                }
+                // Reset the flag after changes are applied
+                isDarkModeToggled = false;
+            }
+        });
+
+        // Modal close event listener
+        $('#darkModeModal').on('hide.bs.modal', function (e) {
+            if (isDarkModeToggled) {
+                if (!confirm('Changes are not saved. Do you want to discard changes?')) {
+                    e.preventDefault(); // Prevent modal from closing
+                } else {
+                    isDarkModeToggled = false; // Reset the flag
+                    $('#darkModeToggle').prop('checked', false); // Uncheck the toggle
+                }
+            }
+        });
+
+        // Apply dark mode if it was previously set
+        if (storedDarkMode === 'true') {
+            // Apply your dark mode changes similar to the ones within your toggle function
+            // For example:
+            $('body').addClass('dark-mode');
+
+            $('.fa-solid.fa-school').fadeOut(function () {
+                $(this).css('color', 'white').fadeIn(); // Fade in icon color change
+            });
+            $('.container-form h3, .container-form h4, .container-form i').fadeTo(function () {
+                $(this).css('color', 'black').fadeIn(); // Fade in icon color change
+            });
+            $('#preferencesModal .modal-content').fadeOut(function () {
+                $(this).css('background-color', '#5d5555').fadeIn(); // Fade in modal background color change
+            });
+            $('.profcont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in profile container color change
+            });
+            $('.subhandlecont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in announcements container color change
+            });
+            $('.gradescont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in enrolledsubs container color change
+            });
+            $('.prefcont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.membutton').fadeTo(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.annbutton').fadeTo(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist').fadeOut(function () {
+                $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist4').fadeOut(function () {
+                $(this).css('background-color', '#8BBDF5').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist6').fadeOut(function () {
+                $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
+            });
+        } else {
+            $('body').removeClass('dark-mode');
+            $('.fa-solid.fa-school').fadeOut(function () {
+                $(this).css('color', 'white').fadeIn(); // Fade in icon color change
+            });
+            $('#preferencesModal .modal-content').fadeOut(function () {
+                $(this).css('background-color', 'white').fadeIn(); // Fade in modal background color change
+            });
+            $('.container-form h3, .container-form h4, .container-form i').fadeTo(function () {
+                $(this).css('color', 'black').fadeIn(); // Fade in icon color change
+            });
+            $('.profcont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in profile container color change
+            });
+            $('.subhandlecont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in announcements container color change
+            });
+            $('.gradescont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in enrolledsubs container color change
+            });
+            $('.prefcont').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.membutton').fadeTo(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.annbutton').fadeTo(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist2').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist3').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist4').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist5').fadeOut(function () {
+                $(this).css('background-color', '#0A4D98').fadeIn(); // Fade in grades container color change
+            });
+            $('.linerist6').fadeOut(function () {
+                $(this).css('background-color', 'white').fadeIn(); // Fade in grades container color change
+            });
+
+            // Reset the flag after changes are applied
+            isDarkModeToggled = false;
+        }
+
+    });
+
 </script>
 
 <!-- LOGOUT FUNCTION -->
