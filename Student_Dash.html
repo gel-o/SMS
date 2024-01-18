@@ -33,6 +33,12 @@
 
     </div>
 
+    <!-- LOGOUT BUTTON -->
+    <a href="#" id="logoutBtn" style="position: absolute; top: 20px; right: 20px; color: white; text-decoration: none;">
+        <i class="fa-solid fa-power-off" style="font-size: 25px;"></i>
+    </a>
+
+
     <!-- DETAILS CONTAINER -->
     <div class="container-form">
         <div class="container mt-5">
@@ -496,6 +502,19 @@
         });
 
     </script>
+
+    <!-- LOGOUT FUNCTION -->
+    <script>
+        $(document).ready(function () {
+            // Logout button click event
+            $('#logoutBtn').click(function () {
+                // Add logic to perform logout actions (e.g., redirect to login page, clear session, etc.)
+                // For demonstration purposes, let's assume redirecting to the login page:
+                window.location.href = 'New_Portal_Login.html';
+            });
+        });
+    </script>
+
 </body>
 
 </html>
