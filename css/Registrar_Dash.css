@@ -100,6 +100,17 @@ html {
     border-radius: 5px;
 }
 
+.linerist2 {
+    width: 100%;
+    height: 3px;
+    background-color: #0A4D98;
+    /* Adjust line color */
+    margin-top: -71px;
+    /* Adjust distance between text and line */
+    border-radius: 5px;
+
+}
+
 .stu-rec:hover {
     background-color: #8BBDF5;
     /* Adjust hover color as desired */
@@ -108,7 +119,7 @@ html {
 .stu-rec {
     position: absolute;
     width: 35%;
-    top: -133%;
+    top: -90%;
     right: 64%;
     border-radius: 15px;
     background-color: #0A4D98;
@@ -117,6 +128,7 @@ html {
     cursor: pointer;
     padding: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
     /* Additional styles as needed */
 }
 
@@ -138,6 +150,118 @@ html {
     text-wrap: nowrap;
 }
 
+.tea-rec:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.tea-rec {
+    position: absolute;
+    width: 35%;
+    top: 73%;
+    right: 64%;
+    border-radius: 15px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+    /* Additional styles as needed */
+}
+
+.tea-rec i {
+    color: white;
+    position: relative;
+    font-size: 20px;
+    right: -43%;
+}
+
+.tea-rec h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: -3%;
+    top: 2px;
+    margin-bottom: 0px;
+    text-wrap: nowrap;
+}
+
+.add-memo:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.add-memo {
+    position: absolute;
+    width: 35%;
+    top: 245%;
+    right: 64%;
+    border-radius: 15px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+    /* Additional styles as needed */
+}
+
+.add-memo i {
+    color: white;
+    position: relative;
+    font-size: 20px;
+    right: -43%;
+}
+
+.add-memo h4 {
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    position: relative;
+    right: -17%;
+    top: 2px;
+    margin-bottom: 0px;
+    text-wrap: nowrap;
+}
+
+.notes-cont:hover {
+    background-color: #8BBDF5;
+    /* Adjust hover color as desired */
+}
+
+.notes-cont {
+    position: absolute;
+    width: 94%;
+    top: 10%;
+    right: 3%;
+    height: 120%;
+    border-radius: 15px;
+    background-color: #0A4D98;
+    /* Adjust as needed */
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+    /* Additional styles as needed */
+}
+
+.req-cont {
+    position: absolute;
+    top: 59%;
+    left: 18%;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 29%;
+    height: 16em;
+    /* Set the width */
+    border-radius: 15px;
+}
 
 /*waves****************************/
 

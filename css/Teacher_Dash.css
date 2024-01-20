@@ -160,6 +160,7 @@ html {
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
+    transition: background-color 0.3s ease;
 }
 
 .membutton i {
@@ -199,6 +200,7 @@ html {
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
+    transition: background-color 0.3s ease;
 }
 
 .annbutton i {
@@ -262,6 +264,7 @@ html {
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
+    transition: background-color 0.3s ease;
 }
 
 .profcont i {
@@ -300,6 +303,7 @@ html {
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
+    transition: background-color 0.3s ease;
 }
 
 .subhandlecont i {
@@ -339,6 +343,7 @@ html {
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
+    transition: background-color 0.3s ease;
 }
 
 .gradescont i {
@@ -378,6 +383,7 @@ html {
     background-color: #0A4D98;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     /* Additional styles as needed */
+    transition: background-color 0.3s ease;
 }
 
 .prefcont i {
