@@ -50,8 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <style>
         .container {
             position: absolute;
-            top: 45%;
-            left: 30%;
+            top: 50%;
+            left: 70%;
             transform: translate(-50%, -50%);
             background-color: white;
             border-radius: 15px;
@@ -75,6 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #0A4D98;
             height: 3px;
             border-radius: 20px;
+
         }
     </style>
 </head>
@@ -91,11 +92,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--SCHOOL LOGO-->
     <a href="index.html">
         <img src="img/school_logo.png" alt="Logo"
-            style="position: absolute; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
+            style="position: absolute; top: 20%; left: 22%; width: 350px; height: auto; z-index: 2;">
     </a>
 
     <h3
-        style="font-weight: bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position: absolute; left: 7%; top: 4%;">
+        style="font-weight: bold; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position: absolute; left: 18%; top: 67%;">
         Dr. Jose P. Rizal Senior Highschool</h3>
 
     <!-- Login Form Container -->
@@ -123,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a>
                 </div>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary" style="background-color: #0A4D98;">Login</button>
+            <button type="submit" name="submit" class="btn btn-primary" style="background-color: #0A4D98; padding: 5px 60px;" onmouseover="this.style.backgroundColor='#355E3B'" onmouseout="this.style.backgroundColor='#0A4D98'">Login</button>
         </form>
     </div>
 
