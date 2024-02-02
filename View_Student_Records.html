@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/View_Student_Records.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+
+        .student-details {
+            position: absolute;
+            left: 16%;
+            top: 15%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 68%;
+            margin: auto;
+        }
+
+        .student-details h2 {
+            color: #0A4D98;
+        }
+
+        .info-table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th,
+        .info-table td {
+            text-align: left;
+            padding: 10px;
+        }
+
+        .info-table th {
+            background-color: #0A4D98;
+            color: #fff;
+        }
+
+        .info-table td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="Registrar_Dash.html">
+        <img src="img/school_logo.png" alt="Logo"
+            style="position: fixed; top: 20px; left: 20px; width: 65px; height: auto; z-index: 2;">
+    </a>
+
+    <!-- bg -->
+    <div class='box'>
+        <div class='wave -one'></div>
+        <div class='wave -two'></div>
+        <div class='wave -three'></div>
+    </div>
+
+    <div class="container student-details">
+        <h2 class="text-center">Student Information</h2>
+        <table class="table info-table">
+            <tbody>
+                <tr>
+                    <th>Full Name</th>
+                    <td>John Doe</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>123 Main Street, Cityville</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>(123) 456-7890</td>
+                </tr>
+                <tr>
+                    <th>Birthdate</th>
+                    <td>January 45, 1521</td>
+                </tr>
+                <tr>
+                    <th>Sex</th>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <th>Religion</th>
+                    <td>Christian</td>
+                </tr>
+                <tr>
+                    <th>Civil Status</th>
+                    <td>Single</td>
+                </tr>
+                <tr>
+                    <th>Guardian</th>
+                    <td>Jane Doe</td>
+                </tr>
+                <tr>
+                    <th>Guardian's Phone Number</th>
+                    <td>(123) 456-7890</td>
+                </tr>
+                <!-- Add more details as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
