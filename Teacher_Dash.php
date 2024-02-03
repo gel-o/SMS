@@ -650,7 +650,7 @@ $con->close();
         $('#confirmLogoutBtn').click(function () {
             // Add logic to perform logout actions (e.g., redirect to login page, clear session, etc.)
             // For demonstration purposes, let's assume redirecting to the login page:
-            window.location.href = 'New_Portal_Login.html';
+            window.location.href = 'Portal_Login.php';
         });
     });
 </script>

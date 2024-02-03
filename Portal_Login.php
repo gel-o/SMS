@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <!--SCHOOL LOGO-->
-    <a href="index.html">
+    <a href="index.php">
         <img src="img/school_logo.png" alt="Logo"
             style="position: absolute; top: 20%; left: 22%; width: 350px; height: auto; z-index: 2;">
     </a>
